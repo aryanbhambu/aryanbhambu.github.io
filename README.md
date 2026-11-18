@@ -1,5 +1,10 @@
-# aryanb.github.io
+# Aryan Bhambu | Personal Academic Website
 
-Personal academic website for Aryan Bhambu.
+Static GitHub Pages site built with `index.html`, the profile portrait `profile.png`, and local image assets in `assets/`.
 
-Built as a static GitHub Pages site using `index.html` and `profile.jpg`.
+Institution marks identify academic affiliations. Research photographs are from Unsplash:
+
+- [Quantitative finance](https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3)
+- [Algorithmic trading](https://images.unsplash.com/photo-1590283603385-17ffb3a7f29f)
+- [Forecasting and learning](https://images.unsplash.com/photo-1515879218367-8466d910aaa4)
+- [DeFi and survival analysis](https://images.unsplash.com/photo-1621761191319-c6fb62004040)
