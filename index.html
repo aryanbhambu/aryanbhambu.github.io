@@ -1500,6 +1500,186 @@
             }
         }
 
+        /* SEPARATE PAGE VIEWS ------------------------------------------------ */
+        body {
+            --page-primary: #2563eb;
+            --page-primary-soft: #3b82f6;
+            --page-accent: #16a34a;
+            --page-tint: #eef5ff;
+        }
+
+        body[data-page="about"] {
+            --page-primary: #16a34a;
+            --page-primary-soft: #22c55e;
+            --page-accent: #2563eb;
+            --page-tint: #eefbf3;
+        }
+
+        body[data-page="education"] {
+            --page-primary: #2563eb;
+            --page-primary-soft: #60a5fa;
+            --page-accent: #16a34a;
+            --page-tint: #eff6ff;
+        }
+
+        body[data-page="research"] {
+            --page-primary: #0891b2;
+            --page-primary-soft: #22d3ee;
+            --page-accent: #2563eb;
+            --page-tint: #ecfeff;
+        }
+
+        body[data-page="publications"] {
+            --page-primary: #4f46e5;
+            --page-primary-soft: #6366f1;
+            --page-accent: #2563eb;
+            --page-tint: #eef2ff;
+        }
+
+        body[data-page="activities"] {
+            --page-primary: #d97706;
+            --page-primary-soft: #f59e0b;
+            --page-accent: #16a34a;
+            --page-tint: #fffbeb;
+        }
+
+        body[data-page="contact"] {
+            --page-primary: #16a34a;
+            --page-primary-soft: #22c55e;
+            --page-accent: #2563eb;
+            --page-tint: #eefbf3;
+        }
+
+        main > section {
+            display: none;
+            min-height: calc(100vh - 180px);
+        }
+
+        main > section.active {
+            display: block;
+            animation: page-in 0.28s ease both;
+        }
+
+        @keyframes page-in {
+            from {
+                opacity: 0;
+                transform: translateY(8px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        main {
+            max-width: 1040px;
+        }
+
+        .hero-grid {
+            border: 1px solid var(--border-subtle, #e5e7eb);
+            border-radius: 20px;
+            background:
+                radial-gradient(circle at 88% 10%, rgba(34, 197, 94, 0.12), transparent 30%),
+                linear-gradient(135deg, var(--page-tint) 0%, #fff 58%, #f8fbff 100%);
+            box-shadow: 0 18px 40px rgba(37, 99, 235, 0.12);
+            padding: 32px;
+        }
+
+        .hero-role,
+        .hero-affiliation,
+        .profile-meta-role,
+        .about-subheading,
+        .education-heading,
+        .research-card h3,
+        .activity-title,
+        .contact-card h3 {
+            color: var(--page-primary);
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--page-primary), var(--page-primary-soft));
+            border: 0;
+        }
+
+        .btn-primary:hover {
+            background: var(--page-primary);
+        }
+
+        .btn-outline {
+            color: var(--page-primary);
+            border-color: var(--page-primary-soft);
+        }
+
+        .section-header {
+            border-bottom: 1px solid var(--border-subtle, #e5e7eb);
+            padding-bottom: 18px;
+        }
+
+        .section-title {
+            color: var(--heading);
+        }
+
+        .section-title::before {
+            display: inline-block;
+            width: 28px;
+            height: 3px;
+            margin-right: 10px;
+            vertical-align: middle;
+            background: linear-gradient(90deg, var(--page-primary), var(--page-accent));
+        }
+
+        .skill-card,
+        .education-item,
+        .research-card,
+        .publication-item,
+        .timeline-item,
+        .contact-card {
+            border: 1px solid var(--border-subtle, #e5e7eb);
+            border-radius: 14px;
+            background: #fff;
+            box-shadow: 0 10px 24px rgba(15, 23, 42, 0.06);
+            padding: 18px;
+            margin-bottom: 16px;
+        }
+
+        .skill-pill,
+        .pub-year-pill,
+        .pub-status-pill,
+        .pub-type,
+        .activity-tag,
+        .hero-tag {
+            border: 1px solid color-mix(in srgb, var(--page-primary) 24%, white);
+            border-radius: 999px;
+            background: var(--page-tint);
+            color: var(--page-primary);
+            padding: 3px 10px;
+        }
+
+        .nav-links a.active {
+            color: var(--page-primary);
+            font-weight: 600;
+        }
+
+        .nav-links a.active::after {
+            display: block;
+            width: 100%;
+            background: linear-gradient(90deg, var(--page-primary), var(--page-accent));
+        }
+
+        @media (max-width: 640px) {
+            main {
+                padding: 28px 20px;
+            }
+
+            main > section {
+                min-height: calc(100vh - 210px);
+            }
+
+            .hero-grid {
+                padding: 22px 18px;
+            }
+        }
+
 </style>
 </head>
 <body>
@@ -2416,9 +2596,10 @@
 
     <!-- JS: smooth scroll, nav active state, fade-in ---------------------- -->
     <script>
-        // Mobile nav toggle
         const navToggle = document.getElementById('navToggle');
         const navLinksContainer = document.getElementById('navLinks');
+        const navLinks = document.querySelectorAll('.nav-links a[href^="#"]');
+        const sections = document.querySelectorAll('main > section[id]');
 
         if (navToggle) {
             navToggle.addEventListener('click', () => {
@@ -2426,67 +2607,46 @@
             });
         }
 
-        // Smooth scrolling + active link update on click
-        const navLinks = document.querySelectorAll('.nav-links a[href^="#"]');
-
-        navLinks.forEach(link => {
-            link.addEventListener('click', (event) => {
-                event.preventDefault();
-                const targetId = link.getAttribute('href');
-                const target = document.querySelector(targetId);
-                if (target) {
-                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                }
-
-                // Close mobile menu
-                navLinksContainer.classList.remove('open');
-
-                // Set active state
-                navLinks.forEach(l => l.classList.remove('active'));
-                link.classList.add('active');
-            });
-        });
-
-        // Update active nav link on scroll
-        const sections = document.querySelectorAll('main section[id]');
-        window.addEventListener('scroll', () => {
-            const scrollPos = window.scrollY || window.pageYOffset;
-            let currentId = 'home';
+        function showPage(pageId, updateHash = true) {
+            const validPage = document.getElementById(pageId) ? pageId : 'home';
 
             sections.forEach(section => {
-                const top = section.offsetTop - 120;
-                if (scrollPos >= top) {
-                    currentId = section.getAttribute('id');
-                }
+                section.classList.toggle('active', section.id === validPage);
             });
 
             navLinks.forEach(link => {
-                const href = link.getAttribute('href').substring(1);
-                if (href === currentId) {
-                    link.classList.add('active');
-                } else {
-                    link.classList.remove('active');
-                }
+                link.classList.toggle('active', link.getAttribute('href') === '#' + validPage);
+            });
+
+            document.body.dataset.page = validPage;
+            const pageName = validPage.charAt(0).toUpperCase() + validPage.slice(1);
+            document.title = validPage === 'home'
+                ? 'Aryan Bhambu | Research Profile'
+                : 'Aryan Bhambu | ' + pageName;
+
+            if (navLinksContainer) {
+                navLinksContainer.classList.remove('open');
+            }
+
+            if (updateHash) {
+                history.pushState(null, '', '#' + validPage);
+            }
+
+            window.scrollTo({ top: 0, behavior: 'auto' });
+        }
+
+        navLinks.forEach(link => {
+            link.addEventListener('click', event => {
+                event.preventDefault();
+                showPage(link.getAttribute('href').substring(1));
             });
         });
 
-        // Fade-in on scroll
-        const observer = new IntersectionObserver(
-            entries => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('visible');
-                        observer.unobserve(entry.target);
-                    }
-                });
-            },
-            {
-                threshold: 0.15,
-                rootMargin: '0px 0px -40px 0px'
-            }
-        );
+        window.addEventListener('popstate', () => {
+            showPage(location.hash.substring(1) || 'home', false);
+        });
 
-        document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+        showPage(location.hash.substring(1) || 'home', false);
     </script>
 </body>
 </html>
