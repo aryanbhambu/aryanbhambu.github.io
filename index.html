@@ -44,10 +44,10 @@
       button, input, select, textarea { font: inherit; }
       button { color: inherit; }
 
-      body[data-page="about"], body[data-page="contact"] { --accent: var(--green); --tint: #eaf5ee; }
+      body[data-page="education"], body[data-page="contact"] { --accent: var(--green); --tint: #eaf5ee; }
       body[data-page="research"] { --accent: #136b87; --tint: #e8f4f8; }
       body[data-page="publications"] { --accent: #4a54a3; --tint: #eff0fa; }
-      body[data-page="activities"] { --accent: #9c621d; --tint: #faf2e7; }
+      body[data-page="experience"] { --accent: #9c621d; --tint: #faf2e7; }
 
       nav {
         position: sticky;
@@ -106,10 +106,8 @@
       .section-title { font-size: clamp(30px, 3.2vw, 40px); font-weight: 600; letter-spacing: -.025em; }
       .section-title::before { content: none; }
       .section-subtitle { max-width: 850px; margin: 13px 0 0; color: var(--body); font-size: 18px; }
+      .visually-hidden { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0; }
       .fade-in { opacity: 1; transform: none; }
-      .current-affiliation { display: flex; align-items: center; gap: 16px; margin: 0 0 24px; padding: 14px 18px; border: 1px solid var(--line); border-radius: 12px; color: var(--muted); font-size: 15px; }
-      .current-affiliation img { width: 96px; height: 48px; object-fit: contain; }
-      .current-affiliation strong { color: var(--ink); }
 
       .home-content { max-width: 950px; margin: 18px auto 0; color: #444b55; font-size: 19px; line-height: 1.75; }
       .home-content p { margin-bottom: 1.15em; }
@@ -123,39 +121,7 @@
         object-fit: cover;
         object-position: center 18%;
       }
-      .home-affiliations { clear: both; display: flex; flex-wrap: wrap; gap: 14px; padding-top: 15px; }
-      .home-affiliations a {
-        min-width: 250px;
-        display: flex;
-        align-items: center;
-        gap: 14px;
-        padding: 13px 16px;
-        border: 1px solid var(--line);
-        border-radius: 12px;
-        background: #fff;
-        color: var(--body);
-        font-size: 14px;
-        line-height: 1.45;
-        text-decoration: none;
-      }
-      .home-affiliations a:hover { border-color: #b7c8e5; background: #fafcff; }
-      .home-affiliations img { width: 74px; height: 48px; object-fit: contain; }
-      .home-affiliations strong { color: var(--ink); }
-
-      .about-layout { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.05fr); gap: 24px; align-items: start; }
-      .about-text-block, .skill-card, .edu-card, .focus-card, .publication-item, .timeline-item { border: 1px solid var(--line); border-radius: var(--radius); background: #fff; }
-      .about-text-block { padding: 22px 24px; }
-      .about-subheading { margin: 0 0 10px; color: var(--accent); font-size: 19px; }
-      .about-text-block ul { margin: 0 0 20px 20px; padding: 0; }
-      .about-text-block li { padding: 2px 0 2px 3px; }
-      .skills-grid { display: grid; gap: 14px; }
-      .skill-card { padding: 18px; }
-      .skill-card-header { display: flex; align-items: flex-start; gap: 13px; }
-      .skill-icon { display: grid; flex: 0 0 38px; width: 38px; height: 38px; place-items: center; border-radius: 12px; background: var(--tint); color: var(--accent); font-size: 16px; font-weight: 700; }
-      .skill-card h3 { margin: 0 0 4px; font-size: 18px; }
-      .skill-caption { margin: 0; color: var(--muted); font-size: 15px; line-height: 1.5; }
-      .skill-pill-row { display: flex; flex-wrap: wrap; gap: 7px; margin-top: 15px; }
-      .skill-pill { display: inline-flex; padding: 4px 9px; border: 1px solid #dbe6f8; border-radius: 999px; background: #f7f9fc; color: #36527c; font-size: 13px; }
+      .edu-card, .publication-item { border: 1px solid var(--line); border-radius: var(--radius); background: #fff; }
 
       .education-timeline { display: grid; gap: 16px; }
       .edu-card { padding: 22px 24px; }
@@ -172,13 +138,8 @@
 
       .research-heading { display: flex; justify-content: space-between; align-items: flex-end; gap: 26px; }
       .research-heading .section-title { flex: 0 0 auto; }
-      .research-tabs { display: flex; flex-wrap: wrap; justify-content: flex-end; gap: 12px 24px; }
-      .research-tab { padding: 0; border: 0; border-bottom: 1px solid transparent; background: transparent; color: var(--blue-dark); font-size: 16px; cursor: pointer; }
-      .research-tab:hover, .research-tab.active { border-bottom-color: currentColor; }
-      .research-tab.active { font-weight: 600; }
       .research-lead { margin: 14px 0 22px; color: var(--muted); }
       .research-feature { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); align-items: center; gap: clamp(28px, 6vw, 70px); margin: 24px 0 34px; }
-      .research-feature[hidden] { display: none; }
       .research-feature.reverse .research-image { order: 2; }
       .research-image { width: 100%; aspect-ratio: 1.45; border-radius: 16px; background: var(--soft); object-fit: cover; }
       .research-copy { padding: 10px 0; }
@@ -188,11 +149,10 @@
       .research-points { display: grid; gap: 8px; margin: 0; padding: 0; list-style: none; }
       .research-points li { position: relative; padding-left: 27px; }
       .research-points li::before { content: "✓"; position: absolute; left: 0; top: 4px; width: 19px; height: 19px; display: grid; place-items: center; border-radius: 50%; background: var(--tint); color: var(--blue-dark); font-size: 12px; font-weight: 700; }
-      .focus-title { margin: 0 0 14px; font-size: 19px; }
-      .focus-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; }
-      .focus-card { min-height: 150px; padding: 20px 22px; background: var(--soft); border: 0; }
-      .focus-card h4 { margin-bottom: 7px; font-size: 17px; }
-      .focus-card p { margin: 0; color: var(--muted); font-size: 16px; }
+      .research-toolkit { margin-top: 48px; }
+      .focus-title { margin: 0 0 8px; font-size: 23px; }
+      .research-toolkit p { max-width: 930px; margin: 12px 0; color: var(--body); font-size: 17px; }
+      .research-toolkit strong { color: var(--ink); }
 
       .publications-list { display: grid; gap: 13px; }
       .pub-section-subtitle { margin: 22px 0 2px; color: var(--accent); font-size: 19px; font-weight: 700; }
@@ -206,15 +166,12 @@
       .pub-link, .social-chip { display: inline-flex; align-items: center; gap: 6px; padding: 6px 10px; border: 1px solid var(--line); border-radius: 9px; background: #fff; font-size: 14px; font-weight: 600; text-decoration: none; }
       .preprint { border-style: dashed; }
 
-      .timeline { display: grid; gap: 14px; }
-      .timeline-item { padding: 20px 22px; }
-      .timeline-header { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 8px; }
-      .timeline-role { font-size: 19px; font-weight: 700; }
-      .timeline-where { display: flex; align-items: center; gap: 9px; margin-top: 5px; color: var(--accent); font-weight: 600; }
-      .timeline-institution-logo { width: 44px; height: 34px; object-fit: contain; }
-      .timeline-when { color: var(--muted); font-size: 15px; }
-      .timeline-body { margin-top: 10px; }
-      .timeline-body p:last-child { margin-bottom: 0; }
+      .experience-content { display: grid; gap: 28px; max-width: 980px; margin-top: 28px; }
+      .experience-group h3 { margin: 0 0 12px; color: var(--accent); font-size: 21px; }
+      .experience-line { margin: 0 0 12px; color: var(--body); font-size: 16px; line-height: 1.7; }
+      .experience-line:last-child { margin-bottom: 0; }
+      .experience-line strong { color: var(--ink); }
+      .experience-line time { color: var(--accent); font-weight: 600; }
 
       .contact-layout { display: grid; grid-template-columns: minmax(0, 1.45fr) minmax(300px, .95fr); align-items: start; gap: clamp(30px, 5vw, 64px); margin-top: 24px; }
       .contact-form { display: grid; gap: 17px; }
@@ -244,8 +201,6 @@
         .nav-inner { width: min(100% - 36px, 1120px); }
         main { width: min(100% - 36px, 1120px); }
         .research-heading { display: block; }
-        .research-tabs { justify-content: flex-start; margin-top: 14px; }
-        .focus-grid { gap: 12px; }
       }
       @media (max-width: 760px) {
         .nav-inner { min-height: 68px; }
@@ -253,7 +208,6 @@
         .nav-links { display: none; position: absolute; top: calc(100% - 1px); left: 0; right: 0; z-index: 3; padding: 10px; border: 1px solid var(--line); border-radius: 0 0 16px 16px; background: #fff; box-shadow: 0 12px 28px rgba(24, 39, 75, .12); }
         .nav-links.open { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); }
         .nav-links a { padding: 10px 12px; }
-        .about-layout { grid-template-columns: 1fr; }
         .contact-layout { grid-template-columns: 1fr; }
         .lab-card { max-width: none; }
       }
@@ -263,19 +217,12 @@
         main { padding-top: 22px; }
         .home-content { margin-top: 6px; font-size: 17px; }
         .home-portrait { width: 130px; height: 155px; margin: 4px 0 12px 17px; }
-        .home-affiliations { display: grid; }
-        .home-affiliations a { min-width: 0; }
         .section-title { font-size: 31px; }
-        .section-subtitle { font-size: 16px; }
-        .current-affiliation { align-items: flex-start; font-size: 14px; }
-        .current-affiliation img { width: 72px; height: 42px; }
-        .edu-card, .publication-item, .timeline-item { padding: 17px; }
+        .edu-card, .publication-item { padding: 17px; }
         .edu-top-row { align-items: flex-start; }
         .edu-institution-wrap { gap: 10px; }
         .institution-logo { width: 58px; height: 48px; flex-basis: 58px; }
         .edu-institution { font-size: 17px; }
-        .research-tabs { gap: 10px 17px; }
-        .research-tab { font-size: 14px; }
         .research-feature { grid-template-columns: 1fr; gap: 15px; margin: 18px 0 28px; }
         .research-feature.reverse .research-image { order: 0; }
         .research-image { aspect-ratio: 1.55; }
@@ -309,10 +256,10 @@
 
             <ul class="nav-links" id="navLinks">
                 <li><a href="#home" class="active">Home</a></li>
-                <li><a href="#about">About</a></li>
+                <li><a href="#education">Education</a></li>
                 <li><a href="#research">Research</a></li>
                 <li><a href="#publications">Publications</a></li>
-                <li><a href="#activities">Activities</a></li>
+                <li><a href="#experience">Experience</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
         </div>
@@ -331,107 +278,7 @@
 
                 <p>Explore my <a href="#research">research areas</a>, browse my <a href="#publications">publications</a>, or <a href="#contact">get in touch</a>.</p>
 
-                <div class="home-affiliations" aria-label="Current and doctoral institutions">
-                    <a href="https://www.iitb.ac.in/" target="_blank" rel="noopener">
-                        <img src="assets/logos/iit-bombay.svg" alt="Indian Institute of Technology Bombay logo">
-                        <span>Postdoctoral Researcher<br><strong>IIT Bombay</strong></span>
-                    </a>
-                    <a href="https://www.iitg.ac.in/" target="_blank" rel="noopener">
-                        <img src="assets/logos/index.png" alt="Indian Institute of Technology Guwahati logo">
-                        <span>Ph.D. in Mathematics<br><strong>IIT Guwahati · 2022–2026</strong></span>
-                    </a>
-                </div>
             </div>
-        </section>
-
-        <!-- ABOUT --------------------------------------------------------- -->
-        <section id="about">
-            <div class="section-inner">
-                <div class="section-header fade-in">
-                    <h2 class="section-title">About me</h2>
-                    <p class="section-subtitle">
-                        I completed my Ph.D. in Mathematics at IIT Guwahati in June 2026, where my work focused on neural network-based modelling of noisy time-series data for forecasting and decision-making.
-                    </p>
-                </div>
-
-                <div class="current-affiliation">
-                    <img src="assets/logos/iit-bombay.svg" alt="IIT Bombay logo">
-                    <div><strong>Postdoctoral Researcher</strong><br>IITB–Citadel Securities Quantitative Research Lab · IIT Bombay · August 2026–Present</div>
-                </div>
-
-                <div class="about-layout">
-                    <div class="about-text-block fade-in">
-                        <h3 class="about-subheading">Research focus</h3>
-                        <ul>
-
-                            <li>Volatility and risk modelling for financial time series.</li>
-                            <li>Forecasting wave-height and load series.</li>
-                            <li>Trading rules, portfolio selection, and decision support.</li>
-                            <li>Option pricing and hedging under uncertainty.</li>
-                            <li>Survival analysis for decentralized finance risk studies.</li>
-</ul>
-
-                        <h3 class="about-subheading">Methods &amp; themes</h3>
-                        <ul>
-
-                            <li>Randomized neural networks with non-iterative learning.</li>
-                            <li>Advanced deep and ensemble learning frameworks.</li>
-                            <li>Heteroscedastic, multi-output, and adaptive modelling.</li>
-                            <li>Context-aware, memory-enhanced, and transformer-inspired architectures.</li>
-                            <li>Deep reinforcement learning and uncertainty-aware prediction.</li>
-</ul>
-                    </div>
-
-                    <div class="skills-grid fade-in">
-                        <article class="skill-card skill-card--code">
-                            <div class="skill-card-header">
-                                <div class="skill-icon skill-icon--code">&lt;/&gt;</div>
-                                <div>
-                                    <h3>Programming &amp; Tools</h3>
-                                    <p class="skill-caption">
-                                        Implementation of research ideas as reproducible experiments and scalable code.
-                                    </p>
-                                </div>
-                            </div>
-                            <div class="skill-pill-row">
-                                <span class="skill-pill">Python</span>
-                                <span class="skill-pill">R</span>
-                                <span class="skill-pill">C</span>
-                                <span class="skill-pill">MATLAB</span>
-                                <span class="skill-pill">LaTeX</span>
-                                <span class="skill-pill">HPC</span>
-                                <span class="skill-pill">Dask</span>
-                                <span class="skill-pill">Parallel Computing</span>
-                            </div>
-                        </article>
-
-                        <article class="skill-card skill-card--finance">
-                            <div class="skill-card-header">
-                                <div class="skill-icon skill-icon--finance">📈</div>
-                                <div>
-                                    <h3>Applications in Finance</h3>
-
-                                    <p class="skill-caption">
-                                        Data‑driven approaches to modelling markets, risk, and trading behaviour.
-                                    </p>
-                                </div>
-                            </div>
-                            <div class="skill-pill-row">
-                                <span class="skill-pill">High Frequency Modelling</span>
-                                <span class="skill-pill">Volatility Forecasting</span>
-                                <span class="skill-pill">Portfolio Optimization</span>
-                                <span class="skill-pill">Stock Trading</span>
-                                <span class="skill-pill">Option Pricing</span>
-                            <span class="skill-pill">Decentralized Finance</span>
-                            <span>
-</span>
-                                <span class="skill-pill">Risk Assessment</span>
-                            </div>
-                        </article>
-                    </div>
-                </div>
-            </div>
-
         </section>
 
         <!-- EDUCATION ------------------------------------------------------ -->
@@ -459,7 +306,7 @@
                         <!-- THESIS TITLE START -->
                         <p class="thesis-title-line">
                             <span class="thesis-label">Thesis title:</span>
-                            Learning Frameworks for time series forecasting and financial decision-making using backpropagation and randomized neural networks.
+                            Learning Frameworks for Time Series Analysis and Financial Decision-Making using Backpropagation and Randomized Neural Networks.
                         </p>
                         <!-- THESIS TITLE END -->
 
@@ -499,20 +346,19 @@
                             <div class="edu-degree">M.Sc. in Applied Mathematics</div>
                             <div class="edu-meta">Aug 2019 – Jul 2021 · Mandi, India</div>
                             <div class="edu-body">
-                                <p><strong>Master's thesis:</strong> Applications of Deep Learning in Supervised Data Analysis</p>
-                                <p>
-                                    Advisors: 
-                                    <a href="https://scholar.google.co.in/citations?user=BlAsfO8AAAAJ&hl=en" target="_blank" rel="noreferrer">
-                                    Prof. Manoj Thakur 
-                                    </a>
-                                    and 
-                                    <a href="https://scholar.google.co.in/citations?user=qZkww5oAAAAJ&hl=en" target="_blank" rel="noreferrer">
-                                    Prof. Samar Agnihotri
-                                    </a>
+                                <p class="thesis-title-line">
+                                    <span class="thesis-label">Master's thesis:</span>
+                                    Applications of Deep Learning in Supervised Data Analysis.
                                 </p>
                                 <p>
-                                    Utilized Convolutional based GANs for image generation; deep networks (FNN, CNN, ResNets) for
-                                    image classification; and RNN, LSTM, GRU, and Bi-LSTM models for financial forecasting.
+                                    Advisors:
+                                    <a href="https://faculty.iitmandi.ac.in/~manoj/" target="_blank" rel="noopener">Prof. Manoj Thakur</a>,
+                                    School of Basic Sciences, Indian Institute of Technology Mandi, and
+                                    <a href="https://faculty.iitmandi.ac.in/~samar/" target="_blank" rel="noopener">Prof. Samar Agnihotri</a>,
+                                    School of Computing and Electrical Engineering, Indian Institute of Technology Mandi.
+                                </p>
+                                <p>
+                                    The thesis explored supervised learning across three complementary problems: convolutional GANs for image generation; feed-forward networks, CNNs, and ResNets for image classification; and RNN, LSTM, GRU, and bidirectional LSTM models for financial time-series forecasting. This work provided practical experience comparing deep architectures for distinct data types and prediction tasks.
                                 </p>
                                 
                             </div>
@@ -534,11 +380,7 @@
                             <div class="edu-meta">Jul 2016 – Jun 2019 · Jaipur, India</div>
                             <div class="edu-body">
                                 <p>
-                                    Foundational training in mathematics and quantitative sciences.
-                                </p>
-                                <p>
-                                    <strong>Award:</strong> DST-Inspire Scholar (2016–2021), scholarship for
-                                    meritorious students in Natural and Basic Sciences.
+                                    Undergraduate study in mathematics, supported by the DST-Inspire Scholarship (2016–2021).
                                 </p>
                             </div>
                         </div>
@@ -552,19 +394,13 @@
             <div class="section-inner">
                 <div class="research-heading">
                     <h2 class="section-title">Research Areas</h2>
-                    <div class="research-tabs" role="tablist" aria-label="Research topics">
-                        <button class="research-tab active" type="button" role="tab" aria-selected="true" aria-controls="topic-finance" data-research-tab="topic-finance">Quantitative Finance</button>
-                        <button class="research-tab" type="button" role="tab" aria-selected="false" aria-controls="topic-trading" data-research-tab="topic-trading">Algorithmic Trading</button>
-                        <button class="research-tab" type="button" role="tab" aria-selected="false" aria-controls="topic-forecasting" data-research-tab="topic-forecasting">Forecasting &amp; Learning</button>
-                        <button class="research-tab" type="button" role="tab" aria-selected="false" aria-controls="topic-survival" data-research-tab="topic-survival">DeFi &amp; Survival Analysis</button>
-                    </div>
                 </div>
                 <p class="research-lead">
                     Learning frameworks for complex time-dependent data, uncertainty, and decision-making.
                 </p>
 
                 <div class="research-panels">
-                    <article id="topic-finance" class="research-feature active" role="tabpanel">
+                    <article id="topic-finance" class="research-feature">
                         <img class="research-image" src="assets/research/quant-finance.jpg" alt="Financial market candlestick chart">
                         <div class="research-copy">
                             <span class="research-kicker">Markets · Modelling · Risk</span>
@@ -578,7 +414,7 @@
                         </div>
                     </article>
 
-                    <article id="topic-trading" class="research-feature reverse" role="tabpanel" hidden>
+                    <article id="topic-trading" class="research-feature reverse">
                         <img class="research-image" src="assets/research/algorithmic-trading.jpg" alt="Cryptocurrency trading chart on a monitor">
                         <div class="research-copy">
                             <span class="research-kicker">Order flow · Strategies · Decisions</span>
@@ -592,7 +428,7 @@
                         </div>
                     </article>
 
-                    <article id="topic-forecasting" class="research-feature" role="tabpanel" hidden>
+                    <article id="topic-forecasting" class="research-feature">
                         <img class="research-image" src="assets/research/forecasting-learning.jpg" alt="Research code displayed on a computer screen">
                         <div class="research-copy">
                             <span class="research-kicker">Neural networks · Time series · Prediction</span>
@@ -606,7 +442,7 @@
                         </div>
                     </article>
 
-                    <article id="topic-survival" class="research-feature reverse" role="tabpanel" hidden>
+                    <article id="topic-survival" class="research-feature reverse">
                         <img class="research-image" src="assets/research/defi-survival.jpg" alt="Decentralized-finance markets displayed on a smartphone">
                         <div class="research-copy">
                             <span class="research-kicker">Decentralized finance · Time-to-event · Risk</span>
@@ -621,20 +457,10 @@
                     </article>
                 </div>
 
-                <h3 class="focus-title">Key Research Focus Areas</h3>
-                <div class="focus-grid">
-                    <article class="focus-card">
-                        <h4>Forecasting under uncertainty</h4>
-                        <p>Models for volatility, significant wave height, and load series across nonlinear and changing conditions.</p>
-                    </article>
-                    <article class="focus-card">
-                        <h4>Efficient neural learning</h4>
-                        <p>Randomized neural networks, deep ensembles, contextual mechanisms, and memory-enhanced learning.</p>
-                    </article>
-                    <article class="focus-card">
-                        <h4>Financial AI &amp; decisions</h4>
-                        <p>Portfolio optimization, stock trading, option pricing, hedging, and risk-aware decision-making.</p>
-                    </article>
+                <div class="research-toolkit">
+                    <h3 class="focus-title">Methods &amp; toolkit</h3>
+                    <p><strong>Learning methods.</strong> I use randomized neural methods, including RVFL and deep RVFL models, with fixed random hidden mappings and fitted output layers for efficient forecasting, alongside backpropagation-trained deep networks for nonlinear representations. For sequential and long-horizon data, my work includes recurrent LSTM/GRU, transformer-inspired, and state-space models. Heteroscedastic models, ensembles, and multi-output designs address changing variance, related targets, and predictive uncertainty; deep reinforcement learning frames trading and portfolio allocation as sequential decisions.</p>
+                    <p><strong>Programming &amp; tools.</strong> Python, R, C, MATLAB, LaTeX, TensorFlow, PyTorch, Joblib, Dask, high-performance computing, and parallel computing.</p>
                 </div>
             </div>
         </section>
@@ -642,10 +468,7 @@
         <!-- PUBLICATIONS --------------------------------------------------- -->
         <section id="publications">
             <div class="section-inner">
-                <div class="section-header fade-in">
-                    <h2 class="section-title">Publications</h2>
-                </div>
-
+                <h2 class="visually-hidden">Publications</h2>
                 <div class="publications-list">
                     <div class="pub-section-subtitle fade-in">Peer‑reviewed articles &amp; conference papers</div>
 
@@ -1034,120 +857,43 @@
             </div>
         </section>
 
-        <!-- ACTIVITIES ----------------------------------------------------- -->
-        <section id="activities">
+        <!-- EXPERIENCE ----------------------------------------------------- -->
+        <section id="experience">
             <div class="section-inner">
-                <div class="section-header fade-in">
-                    <h2 class="section-title">Academic activities &amp; experience</h2>
-                </div>
+                <h2 class="section-title">Experience</h2>
+                <p class="section-subtitle">Research, teaching, and academic service across IIT Bombay, IIT Guwahati, IIT Mandi, and industry.</p>
 
-                <div class="timeline">
+                <div class="experience-content">
+                    <section class="experience-group">
+                        <h3>Research &amp; professional roles</h3>
+                        <p class="experience-line"><strong>Postdoctoral Researcher</strong> · IITB–Citadel Securities Quantitative Research Lab, IIT Bombay · <time datetime="2026-08">August 2026–Present</time>. Conducting research in quantitative finance, financial machine learning, and data-driven methods for financial markets under the supervision of Prof. Sudeep R. Bapat.</p>
+                        <p class="experience-line"><strong>Freelance Research Analyst</strong> · Turing · <time datetime="2024-06">June 2024</time>–<time datetime="2026-03">March 2026</time>. Supported next-generation AI research through evaluation and technical analysis of generative and agentic methods, including algorithmic validation.</p>
+                        <p class="experience-line"><strong>Research Intern</strong> · MEDSOLU (OPC) Pvt. Ltd. · Summer 2022. Designed and conducted exploratory analyses using bootstrap and deep-ensemble time-series modelling to study financial forecasting, risk-adjusted returns, and uncertainty estimation.</p>
+                    </section>
 
-                    <!-- TEACHING EXPERIENCE UPDATED START -->
-                    <article class="timeline-item fade-in">
-                        <div class="timeline-header">
-                            <div class="timeline-role">Tutor</div>
-                            <span class="timeline-year-pill">2026 – Present</span>
-                        </div>
-                        <div class="timeline-where">
-                            <img class="timeline-institution-logo" src="assets/logos/index.png" alt="">
-                            IIT Guwahati · Coursera B.Sc. Programme
-                        </div>
-                        <div class="timeline-when">August 2026 – Present</div>
-                        <div class="timeline-body">
-                            <strong>Tutor:</strong> DA210 (Time Series Analysis &amp; Forecasting).
-                        </div>
-                    </article>
+                    <section class="experience-group">
+                        <h3>Teaching</h3>
+                        <p class="experience-line"><strong>Tutor</strong> · Coursera B.Sc. Programme, IIT Guwahati · August 2026–Present. DA210: Time Series Analysis &amp; Forecasting.</p>
+                        <p class="experience-line"><strong>Lead Teaching Assistant</strong> · IIT Guwahati · 2025–2026. DA105: Linear Algebra; DA210: Time Series Analysis &amp; Forecasting.</p>
+                        <p class="experience-line"><strong>Teaching Assistant</strong> · IIT Guwahati · 2023–2026. MA101: Real Analysis and Calculus; MA683: Statistical Analysis; MA373: Monte Carlo Simulation; MA374: Financial Engineering Lab; MA225: Probability Theory and Random Processes; DA105: Linear Algebra.</p>
+                    </section>
 
-                    <article class="timeline-item fade-in">
-                        <div class="timeline-header">
-                            <div class="timeline-role">Teaching Assistantship</div>
-                            <span class="timeline-year-pill">2023 – 2026</span>
-                        </div>
-                        <div class="timeline-where">IIT Guwahati</div>
-                        <div class="timeline-when">Jul 2023 – Mar 2026</div>
-                        <div class="timeline-body">
-                            <p>
-                                <strong>Lead Teaching Assistant:</strong>
-                                DA105 (Linear Algebra); DA210 (Time Series Analysis &amp; Forecasting).
-                            </p>
+                    <section class="experience-group">
+                        <h3>Academic service &amp; leadership</h3>
+                        <p class="experience-line"><strong>Secretary</strong> · Research Scholars’ Forum, Department of Mathematics, IIT Guwahati · August 2023–September 2025.</p>
+                        <p class="experience-line"><strong>Member</strong> · DPPC, IIT Guwahati · August 2023–September 2024.</p>
+                        <p class="experience-line"><strong>Research Council Member</strong> · IIT Mandi · September 2020–July 2021. Contributed to discussions on R&amp;D programmes and future directions for mathematical-sciences projects.</p>
+                        <p class="experience-line"><strong>Journal reviewer</strong> · Neurocomputing, Applied Soft Computing, Neural Networks, Pattern Recognition, Engineering Applications of Artificial Intelligence, Computers &amp; Electrical Engineering, and the International Journal of Cognitive Computing in Engineering.</p>
+                    </section>
 
-                            <p>
-                                <strong>Teaching Assistant:</strong>
-                                MA101 (Real Analysis and Calculus); MA683 (Statistical Analysis);
-                                MA373 (Monte Carlo Simulation); MA374 (Financial Engineering Lab);
-                                MA225 (Probability Theory and Random Processes); DA105 (Linear Algebra).
-                            </p>
-                        </div>
-                    </article>
-                    <!-- TEACHING EXPERIENCE UPDATED END -->
-
-                    <article class="timeline-item fade-in">
-                        <div class="timeline-header">
-                            <div class="timeline-role">Reviewer</div>
-                            <span class="timeline-year-pill">2023 – Present</span>
-                        </div>
-                        <div class="timeline-where">Elsevier and others</div>
-                        <div class="timeline-when">Nov 2023 – Present</div>
-                        <div class="timeline-body">
-                            Active reviewer for journals including <em>Neurocomputing</em>, <em>Applied Soft Computing</em>,
-                            <em>Neural Networks</em>, <em>Pattern Recognition</em>, <em>Engineering Applications of Artificial Intelligence</em>,
-                            <em>Computers &amp; Electrical Engineering</em>, and the <em>International Journal of Cognitive Computing in Engineering</em>.
-                        </div>
-                    </article>
-                        
-                    <article class="timeline-item fade-in">
-                        <div class="timeline-header">
-                            <div class="timeline-role">Secretary, Research Scholars’ Forum (RSF)</div>
-                            <span class="timeline-year-pill">2023 – 2025</span>
-                        </div>
-                        <div class="timeline-where">Department of Mathematics, IIT Guwahati</div>
-                        <div class="timeline-when">Aug 2023 – September 2025</div>
-                        <div class="timeline-body">
-                            Coordinating workshops and seminars, representing research scholars in departmental
-                            meetings, and helping shape the academic environment for the PhD community.
-                        </div>
-                    </article>
-
-                    <article class="timeline-item fade-in">
-                        <div class="timeline-header">
-                            <div class="timeline-role">Research Intern</div>
-                            <span class="timeline-year-pill">2022</span>
-                        </div>
-                        <div class="timeline-where">MEDSOLU (OPC) Pvt. Ltd.</div>
-                        <div class="timeline-when">Summer 2022</div>
-                        <div class="timeline-body">
-                            Conducted qualitative and quantitative research on real‑time series forecasting
-                            for sustainable profit generation by investors, exploring practical deployment
-                            of ML‑based forecasting pipelines.
-                        </div>
-                    </article>
-
-                    <article class="timeline-item fade-in">
-                        <div class="timeline-header">
-                            <div class="timeline-role">Research Council Member</div>
-                            <span class="timeline-year-pill">2020 – 2021</span>
-                        </div>
-                        <div class="timeline-where">IIT Mandi</div>
-                        <div class="timeline-when">Sep 2020 – Jul 2021</div>
-                        <div class="timeline-body">
-                            Contributed to discussions on R&amp;D programmes and future directions for
-                            laboratory and industry‑facing projects in the mathematical sciences.
-                        </div>
-                    </article>
-
-                    <article class="timeline-item fade-in">
-                        <div class="timeline-header">
-                            <div class="timeline-role">DST Inspire Intern</div>
-                            <span class="timeline-year-pill">2020</span>
-                        </div>
-                        <div class="timeline-where">IIT Mandi</div>
-                        <div class="timeline-when">Spring 2020</div>
-                        <div class="timeline-body">
-                            Studied theoretical aspects of deep learning and artificial neural networks,
-                            and implemented models in Python under the supervision of Dr. Manoj Thakur.
-                        </div>
-                    </article>
+                    <section class="experience-group">
+                        <h3>Academic activities &amp; recognition</h3>
+                        <p class="experience-line"><strong>Conference presentations:</strong> “Stock Market Prediction Using Deep Learning Techniques for Short and Long Horizon,” 11th International Conference on Soft Computing for Problem Solving, IIT Mandi (online, 2022); “Deep Learning-Based Decomposition Methods for Financial Volatility Forecasting,” Research Industrial Conclave, IIT Guwahati (2024); “A Heteroscedastic Neural Network Framework for Volatility Prediction,” International Conference on Optimization with Artificial Intelligence and Soft-Computing, NIT Nagaland (2024); “Volatility-Aware Auxiliary Tasks for Risk-Sensitive Reinforcement Learning in Stock Trading,” India Finance Conference, IIM Visakhapatnam (2025).</p>
+                        <p class="experience-line"><strong>Poster presentations:</strong> “Interval Estimation for Time Series Forecasting Using Deep Learning Techniques,” Bombay Workshop on Statistics and Probability, IIT Bombay (2023); “Recurrent Ensemble Random Vector Functional Link Neural Network for Financial Time Series Forecasting,” Indian Symposium on Machine Learning, BITS Pilani, Goa (2024); “Volatility-Aware Risk-Sensitive Reinforcement Learning for Multi-Stock Trading,” Recent Trends in Quantitative Finance, IISc Bangalore (2026).</p>
+                        <p class="experience-line"><strong>Research school:</strong> IEEE-CIS Summer School on Deep Learning and Computational Intelligence, IIT Indore (2022).</p>
+                        <p class="experience-line"><strong>Awards:</strong> Institute Research Fellowship (2022–Present); DST-Inspire Scholarship (2016–2021); IIT JAM (2019); Prof. R. K. Kothari Scholarship (2018).</p>
+                        <p class="experience-line"><strong>Relevant coursework:</strong> Deep learning, machine learning, pattern recognition, advanced statistical algorithms, Python programming, statistical learning, applied optimization, computational financial modelling, probability and statistics, numerical analysis, linear algebra, C programming, real analysis, and technical communication.</p>
+                    </section>
                 </div>
             </div>
         </section>
@@ -1208,14 +954,9 @@
                         <div class="lab-detail">
                             <span class="lab-icon" aria-hidden="true">✉</span>
                             <div><strong>Email</strong><br>
-                                <a href="mailto:a.bhambu@iitg.ac.in">a.bhambu@iitg.ac.in</a><br>
-                                <a href="mailto:pic.citadel@iitb.ac.in">pic.citadel@iitb.ac.in</a><br>
-                                <a href="mailto:office.citadel@iitb.ac.in">office.citadel@iitb.ac.in</a>
+                                <a href="mailto:aryanbhambu.ab@gmail.com">aryanbhambu.ab@gmail.com</a><br>
+                                <a href="mailto:a.bhambu@alumini.iitg.ac.in">a.bhambu@alumini.iitg.ac.in</a>
                             </div>
-                        </div>
-                        <div class="lab-detail">
-                            <span class="lab-icon" aria-hidden="true">☎</span>
-                            <div><strong>Office</strong><br><a href="tel:+912225767145">+91 22 2576 7145</a></div>
                         </div>
                     </aside>
                 </div>
@@ -1250,8 +991,6 @@
         const navLinks = document.querySelectorAll('.nav-links a[href^="#"]');
         const localLinks = document.querySelectorAll('a[href^="#"]');
         const sections = document.querySelectorAll('main > section[id]');
-        const researchTabs = document.querySelectorAll('[data-research-tab]');
-        const researchPanels = document.querySelectorAll('.research-feature');
         const contactForm = document.getElementById('contactForm');
 
         if (navToggle) {
@@ -1262,17 +1001,13 @@
         }
 
         function showPage(pageId, updateHash = true) {
-            if (pageId === 'education') {
-                pageId = 'about';
+            if (pageId === 'about') {
+                pageId = 'education';
             }
             const validPage = document.getElementById(pageId) ? pageId : 'home';
-            const isAbout = validPage === 'about';
 
             sections.forEach(section => {
-                section.classList.toggle(
-                    'active',
-                    section.id === validPage || (isAbout && section.id === 'education')
-                );
+                section.classList.toggle('active', section.id === validPage);
             });
 
             navLinks.forEach(link => {
@@ -1280,10 +1015,15 @@
             });
 
             document.body.dataset.page = validPage;
-            const pageName = validPage.charAt(0).toUpperCase() + validPage.slice(1);
-            document.title = validPage === 'home'
-                ? 'Aryan Bhambu | Research Profile'
-                : 'Aryan Bhambu | ' + pageName;
+            const pageTitles = {
+                home: 'Research Profile',
+                education: 'Education',
+                research: 'Research',
+                publications: 'Publications',
+                experience: 'Experience',
+                contact: 'Contact'
+            };
+            document.title = 'Aryan Bhambu | ' + (pageTitles[validPage] || 'Research Profile');
 
             if (navLinksContainer) {
                 navLinksContainer.classList.remove('open');
@@ -1306,23 +1046,7 @@
                     return;
                 }
                 event.preventDefault();
-                showPage(pageId === 'education' ? 'about' : pageId);
-            });
-        });
-
-        researchTabs.forEach(tab => {
-            tab.addEventListener('click', () => {
-                const panelId = tab.getAttribute('data-research-tab');
-                researchTabs.forEach(item => {
-                    const selected = item === tab;
-                    item.classList.toggle('active', selected);
-                    item.setAttribute('aria-selected', String(selected));
-                });
-                researchPanels.forEach(panel => {
-                    const selected = panel.id === panelId;
-                    panel.classList.toggle('active', selected);
-                    panel.hidden = !selected;
-                });
+                showPage(pageId);
             });
         });
 
@@ -1339,7 +1063,7 @@
                     String(formData.get('message'))
                 ].join('\n');
 
-                window.location.href = `mailto:a.bhambu@iitg.ac.in?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+                window.location.href = `mailto:aryanbhambu.ab@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
             });
         }
 
