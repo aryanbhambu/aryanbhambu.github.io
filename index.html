@@ -129,6 +129,8 @@
       .edu-institution-wrap { display: flex; align-items: center; gap: 14px; }
       .institution-logo { width: 72px; height: 58px; flex: 0 0 72px; object-fit: contain; }
       .edu-institution { font-size: 19px; font-weight: 700; }
+      .edu-institution-link { color: var(--ink); text-decoration: none; }
+      .edu-institution-link:hover, .edu-institution-link:focus-visible { color: var(--accent); text-decoration: underline; text-underline-offset: 3px; }
       .edu-badge, .pub-year-pill, .pub-type, .pub-status-pill, .timeline-year-pill { display: inline-flex; align-items: center; padding: 4px 10px; border-radius: 999px; background: var(--tint); color: var(--accent); font-size: 13px; font-weight: 700; }
       .edu-degree { margin-top: 7px; font-weight: 600; }
       .edu-meta { margin: 2px 0 12px; color: var(--muted); font-size: 15px; }
@@ -173,17 +175,34 @@
       .pub-link, .social-chip { display: inline-flex; align-items: center; gap: 6px; padding: 6px 10px; border: 1px solid var(--line); border-radius: 9px; background: #fff; font-size: 14px; font-weight: 600; text-decoration: none; }
       .preprint { border-style: dashed; }
 
-      .experience-content { display: grid; gap: 28px; max-width: 980px; margin-top: 28px; }
-      .experience-group h3 { margin: 0 0 12px; color: var(--accent); font-size: 21px; }
-      .experience-line { position: relative; margin: 0 0 12px; padding-left: 22px; color: var(--body); font-size: 16px; line-height: 1.7; }
-      .experience-line:last-child { margin-bottom: 0; }
-      .experience-line strong { color: var(--ink); }
-      .experience-line time { color: var(--accent); font-weight: 600; }
-      .experience-line::before { content: ""; position: absolute; top: .72em; left: 3px; width: 7px; height: 7px; border-radius: 50%; background: var(--green); }
-      .experience-logo { display: inline-block; width: 32px; height: 23px; margin: 0 5px 0 1px; object-fit: contain; vertical-align: -6px; }
-      .experience-logo-frame { display: inline-grid; width: 30px; height: 24px; margin: 0 5px 0 1px; place-items: center; border-radius: 5px; vertical-align: -7px; }
+      .experience-content { display: grid; gap: 30px; max-width: 980px; margin-top: 28px; }
+      .experience-group { display: grid; gap: 18px; }
+      .experience-group h3 { margin: 0; color: var(--accent); font-size: 21px; }
+      .experience-entry { position: relative; padding-left: 22px; }
+      .experience-entry::before, .activity-entry::before { content: ""; position: absolute; top: .72em; left: 3px; width: 7px; height: 7px; border-radius: 50%; background: var(--green); }
+      .experience-title { margin: 0 0 4px; color: var(--ink); font-size: 17px; font-weight: 700; }
+      .experience-meta { margin: 0; color: var(--muted); font-size: 15px; line-height: 1.55; }
+      .experience-meta a img { display: inline-block; vertical-align: middle; }
+      .experience-meta a, .activity-meta a, .experience-description a { color: inherit; font-weight: 600; text-decoration: underline; text-decoration-color: #c5cfdd; text-underline-offset: 3px; }
+      .experience-meta a:hover, .experience-meta a:focus-visible, .activity-meta a:hover, .activity-meta a:focus-visible, .experience-description a:hover, .experience-description a:focus-visible { color: var(--accent); text-decoration: underline; }
+      .experience-meta time { color: var(--accent); font-weight: 600; }
+      .experience-description { margin: 5px 0 0; color: var(--body); font-size: 15px; line-height: 1.65; }
+      .experience-logos { display: inline-flex; align-items: center; gap: 7px; margin-right: 8px; vertical-align: middle; }
+      .experience-logo { display: inline-block; width: 32px; height: 23px; object-fit: contain; }
+      .experience-logo--citadel { width: 150px; height: 12px; object-fit: contain; }
+      .experience-logo-frame { display: inline-grid; width: 30px; height: 24px; margin-right: 7px; place-items: center; border-radius: 5px; vertical-align: middle; }
       .experience-logo-frame--dark { background: #111827; }
       .experience-logo-frame img { width: 19px; height: 19px; object-fit: contain; }
+      .experience-logo-frame--medsolu { width: 43px; height: 48px; overflow: hidden; background: #050505; }
+      .experience-logo-frame--medsolu img { width: 100%; height: 100%; object-fit: contain; }
+      .activity-section { display: grid; gap: 10px; }
+      .activity-section h4 { margin: 0; color: var(--ink); font-size: 16px; }
+      .activity-list { display: grid; gap: 12px; margin: 0; padding: 0; list-style: none; }
+      .activity-entry { position: relative; padding-left: 22px; }
+      .activity-entry::before { top: .65em; }
+      .activity-title { margin: 0; color: var(--ink); font-size: 15px; font-weight: 600; line-height: 1.55; }
+      .activity-meta { margin: 2px 0 0; color: var(--muted); font-size: 14px; line-height: 1.55; }
+      .coursework-line { margin: 0; color: var(--body); font-size: 15px; line-height: 1.65; }
 
       .contact-layout { display: grid; grid-template-columns: minmax(0, 1.45fr) minmax(300px, .95fr); align-items: start; gap: clamp(30px, 5vw, 64px); margin-top: 24px; }
       .contact-form { display: grid; gap: 17px; }
@@ -270,9 +289,9 @@
             <ul class="nav-links" id="navLinks">
                 <li><a href="#home" class="active">Home</a></li>
                 <li><a href="#education">Education</a></li>
+                <li><a href="#experience">Experience</a></li>
                 <li><a href="#research">Research</a></li>
                 <li><a href="#publications">Publications</a></li>
-                <li><a href="#experience">Experience</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
         </div>
@@ -309,7 +328,7 @@
                             <div class="edu-top-row">
                                 <div class="edu-institution-wrap">
                                     <img class="institution-logo" src="assets/logos/index.png" alt="IIT Guwahati logo">
-                                    <div class="edu-institution">Indian Institute of Technology Guwahati</div>
+                                    <a class="edu-institution edu-institution-link" href="https://www.iitg.ac.in/" target="_blank" rel="noopener noreferrer">Indian Institute of Technology Guwahati</a>
                                 </div>
                                 <div class="edu-badge">PhD · CGPA 8.48 / 10</div>
                             </div>
@@ -352,7 +371,7 @@
                             <div class="edu-top-row">
                                 <div class="edu-institution-wrap">
                                     <img class="institution-logo" src="assets/logos/iit-mandi.png" alt="IIT Mandi logo">
-                                    <div class="edu-institution">Indian Institute of Technology Mandi</div>
+                                    <a class="edu-institution edu-institution-link" href="https://www.iitmandi.ac.in/" target="_blank" rel="noopener noreferrer">Indian Institute of Technology Mandi</a>
                                 </div>
                                 <div class="edu-badge">M.Sc. · CGPA 9.03 / 10</div>
                             </div>
@@ -365,10 +384,10 @@
                                 </p>
                                 <p>
                                     Advisors:
-                                    <a href="https://faculty.iitmandi.ac.in/~manoj/" target="_blank" rel="noopener">Prof. Manoj Thakur</a>,
-                                    School of Basic Sciences, Indian Institute of Technology Mandi, and
-                                    <a href="https://faculty.iitmandi.ac.in/~samar/" target="_blank" rel="noopener">Prof. Samar Agnihotri</a>,
-                                    School of Computing and Electrical Engineering, Indian Institute of Technology Mandi.
+                                    <a href="https://faculty.iitmandi.ac.in/~manoj/" target="_blank" rel="noopener">Prof. Manoj Thakur</a>
+                                    (School of Basic Sciences, IIT Mandi), and
+                                    <a href="https://faculty.iitmandi.ac.in/~samar/" target="_blank" rel="noopener">Prof. Samar Agnihotri</a>
+                                    (School of Computing and Electrical Engineering, IIT Mandi).
                                 </p>
                                 <p>
                                     The thesis explored supervised learning across three complementary problems: convolutional GANs for image generation; feed-forward networks, CNNs, and ResNets for image classification; and RNN, LSTM, GRU, and bidirectional LSTM models for financial time-series forecasting. This work provided practical experience comparing deep architectures for distinct data types and prediction tasks.
@@ -385,7 +404,7 @@
                             <div class="edu-top-row">
                                 <div class="edu-institution-wrap">
                                                     <img class="institution-logo" src="assets/logos/university-rajasthan.jpg" alt="University of Rajasthan logo">
-                                    <div class="edu-institution">Maharaja's College, University of Rajasthan</div>
+                                    <a class="edu-institution edu-institution-link" href="https://uniraj.ac.in/" target="_blank" rel="noopener noreferrer">Maharaja's College, University of Rajasthan</a>
                                 </div>
                                 <div class="edu-badge">B.Sc. · 70.89%</div>
                             </div>
@@ -481,15 +500,15 @@
                         <article class="method-step">
                             <span class="method-number">02</span>
                             <h4>Model temporal structure</h4>
-                            <p>Use LSTM/GRU recurrent networks, transformer-inspired and state-space architectures, and multi-output learning for sequential and long-horizon data.</p>
+                            <p>Use LSTM/GRU recurrent networks, transformer-inspired and state-space architectures, and multi-output learning for sequential and long-horizon data. Apply systematic factor mining to discover and evaluate candidate financial signals.</p>
                         </article>
                         <article class="method-step">
                             <span class="method-number">03</span>
-                            <h4>Quantify uncertainty &amp; decide</h4>
-                            <p>Apply heteroscedastic models and deep ensembles to changing variance and forecast uncertainty; use deep reinforcement learning for trading and portfolio decisions.</p>
+                            <h4>Quantify risk &amp; develop decisions</h4>
+                            <p>Apply heteroscedastic models and deep ensembles to changing variance and forecast uncertainty; use deep reinforcement learning (DRL) for trading and portfolio decisions, and explore large language models (LLMs) and agentic systems for research and evaluation workflows.</p>
                         </article>
                     </div>
-                    <p class="toolkit-line"><strong>Implementation toolkit:</strong> Python, R, C, MATLAB, LaTeX, TensorFlow, PyTorch, Joblib, Dask, high-performance computing, and parallel computing.</p>
+                    <p class="toolkit-line"><strong>Implementation toolkit:</strong> Python, R, C, MATLAB, LaTeX, TensorFlow, PyTorch, Hugging Face Transformers, Joblib, Dask, high-performance computing, and parallel computing.</p>
                 </div>
             </div>
         </section>
@@ -895,33 +914,100 @@
                 <div class="experience-content">
                     <section class="experience-group">
                         <h3>Research &amp; professional roles</h3>
-                        <p class="experience-line"><strong>Postdoctoral Researcher</strong> · <img class="experience-logo" src="assets/logos/iit-bombay.svg" alt=""> IITB–Citadel Securities Quantitative Research Lab, IIT Bombay · <time datetime="2026-08">August 2026–Present</time>. Conducting research in quantitative finance, financial machine learning, and data-driven methods for financial markets under the supervision of Prof. Sudeep R. Bapat.</p>
-                        <p class="experience-line"><strong>Freelance Research Analyst</strong> · <span class="experience-logo-frame experience-logo-frame--dark"><img src="assets/logos/turing.ico" alt=""></span> Turing · <time datetime="2024-06">June 2024</time>–<time datetime="2026-03">March 2026</time>. Supported next-generation AI research through evaluation and technical analysis of generative and agentic methods, including algorithmic validation.</p>
-                        <p class="experience-line"><strong>Research Intern</strong> · MEDSOLU (OPC) Pvt. Ltd. · Summer 2022. Designed and conducted exploratory analyses using bootstrap and deep-ensemble time-series modelling to study financial forecasting, risk-adjusted returns, and uncertainty estimation.</p>
+                        <article class="experience-entry">
+                            <h4 class="experience-title">Postdoctoral Researcher</h4>
+                            <p class="experience-meta"><span class="experience-logos"><img class="experience-logo" src="assets/logos/iit-bombay.svg" alt="IIT Bombay logo"><a href="https://www.citadelsecurities.com/" target="_blank" rel="noopener noreferrer" aria-label="Citadel Securities official website"><img class="experience-logo experience-logo--citadel" src="assets/logos/citadel-securities.png" alt="Citadel Securities logo"></a></span> <a href="https://www.som.iitb.ac.in/citadel/" target="_blank" rel="noopener noreferrer">Quantitative Research Lab</a>, <a href="https://www.iitb.ac.in/" target="_blank" rel="noopener noreferrer">IIT Bombay</a> · <time datetime="2026-08">August 2026–Present</time></p>
+                            <p class="experience-description">Conducting research in quantitative finance, financial machine learning, and data-driven methods for financial markets under the supervision of <a href="https://sites.google.com/view/srbapat/home" target="_blank" rel="noopener noreferrer">Prof. Sudeep R. Bapat</a>.</p>
+                        </article>
+                        <article class="experience-entry">
+                            <h4 class="experience-title">Freelance Research Analyst</h4>
+                            <p class="experience-meta"><span class="experience-logo-frame experience-logo-frame--dark" aria-hidden="true"><img src="assets/logos/turing.ico" alt=""></span> <a href="https://www.turing.com/" target="_blank" rel="noopener noreferrer">Turing</a> · <time datetime="2024-06">June 2024</time>–<time datetime="2026-03">March 2026</time></p>
+                            <p class="experience-description">Supported next-generation AI research through evaluation and technical analysis of generative and agentic methods, including algorithmic validation.</p>
+                        </article>
+                        <article class="experience-entry">
+                            <h4 class="experience-title">Research Intern</h4>
+                            <p class="experience-meta"><span class="experience-logo-frame experience-logo-frame--medsolu" aria-hidden="true"><img src="assets/logos/medsolu.png" alt=""></span> <a href="https://sites.google.com/medsolu.co.in/medsolu-opc-pvt-ltd/home" target="_blank" rel="noopener noreferrer">MEDSOLU (OPC) Pvt. Ltd.</a> · Summer 2022</p>
+                            <p class="experience-description">Designed and conducted exploratory analyses using bootstrap and deep-ensemble time-series modelling to study financial forecasting, risk-adjusted returns, and uncertainty estimation.</p>
+                        </article>
                     </section>
 
                     <section class="experience-group">
                         <h3>Teaching</h3>
-                        <p class="experience-line"><strong>Tutor</strong> · Coursera B.Sc. Programme, <img class="experience-logo" src="assets/logos/index.png" alt=""> IIT Guwahati · August 2026–Present. DA210: Time Series Analysis &amp; Forecasting.</p>
-                        <p class="experience-line"><strong>Lead Teaching Assistant</strong> · <img class="experience-logo" src="assets/logos/index.png" alt=""> IIT Guwahati · 2025–2026. DA105: Linear Algebra; DA210: Time Series Analysis &amp; Forecasting.</p>
-                        <p class="experience-line"><strong>Teaching Assistant</strong> · <img class="experience-logo" src="assets/logos/index.png" alt=""> IIT Guwahati · 2023–2026. MA101: Real Analysis and Calculus; MA683: Statistical Analysis; MA373: Monte Carlo Simulation; MA374: Financial Engineering Lab; MA225: Probability Theory and Random Processes; DA105: Linear Algebra.</p>
+                        <article class="experience-entry">
+                            <h4 class="experience-title">Tutor</h4>
+                            <p class="experience-meta">Coursera B.Sc. Programme, <a href="https://www.iitg.ac.in/" target="_blank" rel="noopener noreferrer"><img class="experience-logo" src="assets/logos/index.png" alt=""> IIT Guwahati</a> · August 2026–Present</p>
+                            <p class="experience-description">DA210: Time Series Analysis &amp; Forecasting.</p>
+                        </article>
+                        <article class="experience-entry">
+                            <h4 class="experience-title">Lead Teaching Assistant</h4>
+                            <p class="experience-meta"><a href="https://www.iitg.ac.in/" target="_blank" rel="noopener noreferrer"><img class="experience-logo" src="assets/logos/index.png" alt=""> IIT Guwahati</a> · 2025–2026</p>
+                            <p class="experience-description">DA105: Linear Algebra; DA210: Time Series Analysis &amp; Forecasting.</p>
+                        </article>
+                        <article class="experience-entry">
+                            <h4 class="experience-title">Teaching Assistant</h4>
+                            <p class="experience-meta"><a href="https://www.iitg.ac.in/" target="_blank" rel="noopener noreferrer"><img class="experience-logo" src="assets/logos/index.png" alt=""> IIT Guwahati</a> · 2023–2026</p>
+                            <p class="experience-description">MA101: Real Analysis and Calculus; MA683: Statistical Analysis; MA373: Monte Carlo Simulation; MA374: Financial Engineering Lab; MA225: Probability Theory and Random Processes; DA105: Linear Algebra.</p>
+                        </article>
                     </section>
 
                     <section class="experience-group">
                         <h3>Academic service &amp; leadership</h3>
-                        <p class="experience-line"><strong>Secretary</strong> · Research Scholars’ Forum, Department of Mathematics, <img class="experience-logo" src="assets/logos/index.png" alt=""> IIT Guwahati · August 2023–September 2025.</p>
-                        <p class="experience-line"><strong>Member</strong> · DPPC, <img class="experience-logo" src="assets/logos/index.png" alt=""> IIT Guwahati · August 2023–September 2024.</p>
-                        <p class="experience-line"><strong>Research Council Member</strong> · <img class="experience-logo" src="assets/logos/iit-mandi.png" alt=""> IIT Mandi · September 2020–July 2021. Contributed to discussions on R&amp;D programmes and future directions for mathematical-sciences projects.</p>
-                        <p class="experience-line"><strong>Journal reviewer</strong> · Neurocomputing, Applied Soft Computing, Neural Networks, Pattern Recognition, Engineering Applications of Artificial Intelligence, Computers &amp; Electrical Engineering, and the International Journal of Cognitive Computing in Engineering.</p>
+                        <article class="experience-entry">
+                            <h4 class="experience-title">Secretary</h4>
+                            <p class="experience-meta">Research Scholars’ Forum, Department of Mathematics, <a href="https://www.iitg.ac.in/" target="_blank" rel="noopener noreferrer"><img class="experience-logo" src="assets/logos/index.png" alt=""> IIT Guwahati</a> · August 2023–September 2025</p>
+                            <p class="experience-description">Served in a leadership role for the department’s research-scholars forum.</p>
+                        </article>
+                        <article class="experience-entry">
+                            <h4 class="experience-title">Member</h4>
+                            <p class="experience-meta">Departmental Postgraduate Programme Committee (DPPC), <a href="https://www.iitg.ac.in/" target="_blank" rel="noopener noreferrer"><img class="experience-logo" src="assets/logos/index.png" alt=""> IIT Guwahati</a> · August 2023–September 2024</p>
+                            <p class="experience-description">Contributed as a member of the department’s postgraduate-programme committee.</p>
+                        </article>
+                        <article class="experience-entry">
+                            <h4 class="experience-title">Research Council Member</h4>
+                            <p class="experience-meta"><a href="https://www.iitmandi.ac.in/" target="_blank" rel="noopener noreferrer"><img class="experience-logo" src="assets/logos/iit-mandi.png" alt=""> IIT Mandi</a> · September 2020–July 2021</p>
+                            <p class="experience-description">Contributed to discussions on R&amp;D programmes and future directions for mathematical-sciences projects.</p>
+                        </article>
+                        <article class="experience-entry">
+                            <h4 class="experience-title">Journal Reviewer</h4>
+                            <p class="experience-meta"><a href="https://www.sciencedirect.com/journal/neurocomputing" target="_blank" rel="noopener noreferrer">Neurocomputing</a>, <a href="https://www.sciencedirect.com/journal/applied-soft-computing" target="_blank" rel="noopener noreferrer">Applied Soft Computing</a>, <a href="https://www.sciencedirect.com/journal/neural-networks" target="_blank" rel="noopener noreferrer">Neural Networks</a>, <a href="https://www.sciencedirect.com/journal/pattern-recognition" target="_blank" rel="noopener noreferrer">Pattern Recognition</a>, <a href="https://www.sciencedirect.com/journal/engineering-applications-of-artificial-intelligence" target="_blank" rel="noopener noreferrer">Engineering Applications of Artificial Intelligence</a>, <a href="https://www.sciencedirect.com/journal/computers-and-electrical-engineering" target="_blank" rel="noopener noreferrer">Computers &amp; Electrical Engineering</a>, and <a href="https://www.sciencedirect.com/journal/international-journal-of-cognitive-computing-in-engineering" target="_blank" rel="noopener noreferrer">International Journal of Cognitive Computing in Engineering</a></p>
+                            <p class="experience-description">Peer reviewer for research in neural computing, forecasting, pattern recognition, and applied artificial intelligence.</p>
+                        </article>
                     </section>
 
                     <section class="experience-group">
                         <h3>Academic activities &amp; recognition</h3>
-                        <p class="experience-line"><strong>Conference presentations:</strong> “Stock Market Prediction Using Deep Learning Techniques for Short and Long Horizon,” 11th International Conference on Soft Computing for Problem Solving, IIT Mandi (online, 2022); “Deep Learning-Based Decomposition Methods for Financial Volatility Forecasting,” Research Industrial Conclave, IIT Guwahati (2024); “A Heteroscedastic Neural Network Framework for Volatility Prediction,” International Conference on Optimization with Artificial Intelligence and Soft-Computing, NIT Nagaland (2024); “Volatility-Aware Auxiliary Tasks for Risk-Sensitive Reinforcement Learning in Stock Trading,” India Finance Conference, IIM Visakhapatnam (2025).</p>
-                        <p class="experience-line"><strong>Poster presentations:</strong> “Interval Estimation for Time Series Forecasting Using Deep Learning Techniques,” Bombay Workshop on Statistics and Probability, IIT Bombay (2023); “Recurrent Ensemble Random Vector Functional Link Neural Network for Financial Time Series Forecasting,” Indian Symposium on Machine Learning, BITS Pilani, Goa (2024); “Volatility-Aware Risk-Sensitive Reinforcement Learning for Multi-Stock Trading,” Recent Trends in Quantitative Finance, IISc Bangalore (2026).</p>
-                        <p class="experience-line"><strong>Research school:</strong> IEEE-CIS Summer School on Deep Learning and Computational Intelligence, IIT Indore (2022).</p>
-                        <p class="experience-line"><strong>Awards:</strong> Institute Research Fellowship (2022–Present); DST-Inspire Scholarship (2016–2021); IIT JAM (2019); Prof. R. K. Kothari Scholarship (2018).</p>
-                        <p class="experience-line"><strong>Relevant coursework:</strong> Deep learning, machine learning, pattern recognition, advanced statistical algorithms, Python programming, statistical learning, applied optimization, computational financial modelling, probability and statistics, numerical analysis, linear algebra, C programming, real analysis, and technical communication.</p>
+                        <div class="activity-section">
+                            <h4>Conference presentations</h4>
+                            <ul class="activity-list">
+                                <li class="activity-entry"><p class="activity-title">“Stock Market Prediction Using Deep Learning Techniques for Short and Long Horizon”</p><p class="activity-meta">11th International Conference on Soft Computing for Problem Solving · <a href="https://www.iitmandi.ac.in/" target="_blank" rel="noopener noreferrer">IIT Mandi</a> · Online, 2022</p></li>
+                                <li class="activity-entry"><p class="activity-title">“Deep Learning-Based Decomposition Methods for Financial Volatility Forecasting”</p><p class="activity-meta">Research Industrial Conclave · <a href="https://www.iitg.ac.in/" target="_blank" rel="noopener noreferrer">IIT Guwahati</a> · 2024</p></li>
+                                <li class="activity-entry"><p class="activity-title">“A Heteroscedastic Neural Network Framework for Volatility Prediction”</p><p class="activity-meta">International Conference on Optimization with Artificial Intelligence and Soft-Computing · <a href="https://www.nitnagaland.ac.in/" target="_blank" rel="noopener noreferrer">NIT Nagaland</a> · 2024</p></li>
+                                <li class="activity-entry"><p class="activity-title">“Volatility-Aware Auxiliary Tasks for Risk-Sensitive Reinforcement Learning in Stock Trading”</p><p class="activity-meta">India Finance Conference · <a href="https://www.iimv.ac.in/" target="_blank" rel="noopener noreferrer">IIM Visakhapatnam</a> · 2025</p></li>
+                            </ul>
+                        </div>
+                        <div class="activity-section">
+                            <h4>Poster presentations</h4>
+                            <ul class="activity-list">
+                                <li class="activity-entry"><p class="activity-title">“Interval Estimation for Time Series Forecasting Using Deep Learning Techniques”</p><p class="activity-meta">Bombay Workshop on Statistics and Probability · <a href="https://www.iitb.ac.in/" target="_blank" rel="noopener noreferrer">IIT Bombay</a> · 2023</p></li>
+                                <li class="activity-entry"><p class="activity-title">“Recurrent Ensemble Random Vector Functional Link Neural Network for Financial Time Series Forecasting”</p><p class="activity-meta">Indian Symposium on Machine Learning · <a href="https://www.bits-pilani.ac.in/goa/" target="_blank" rel="noopener noreferrer">BITS Pilani, Goa</a> · 2024</p></li>
+                                <li class="activity-entry"><p class="activity-title">“Volatility-Aware Risk-Sensitive Reinforcement Learning for Multi-Stock Trading”</p><p class="activity-meta">Recent Trends in Quantitative Finance · <a href="https://iisc.ac.in/" target="_blank" rel="noopener noreferrer">IISc Bangalore</a> · 2026</p></li>
+                            </ul>
+                        </div>
+                        <article class="experience-entry">
+                            <h4 class="experience-title">Summer School Participant</h4>
+                            <p class="experience-meta">IEEE-CIS Summer School on Deep Learning and Computational Intelligence · <a href="https://www.iiti.ac.in/" target="_blank" rel="noopener noreferrer">IIT Indore</a> · 2022</p>
+                            <p class="experience-description">Participated in the summer school programme on deep learning and computational intelligence.</p>
+                        </article>
+                        <div class="activity-section">
+                            <h4>Awards</h4>
+                            <ul class="activity-list">
+                                <li class="activity-entry"><p class="activity-title">Institute Research Fellowship · IIT Guwahati · 2022–Present</p></li>
+                                <li class="activity-entry"><p class="activity-title">DST-Inspire Scholarship · 2016–2021</p></li>
+                                <li class="activity-entry"><p class="activity-title">IIT JAM · 2019</p></li>
+                                <li class="activity-entry"><p class="activity-title">Prof. R. K. Kothari Scholarship · 2018</p></li>
+                            </ul>
+                        </div>
+                        <p class="coursework-line"><strong>Relevant coursework:</strong> Deep Learning, Machine Learning, Pattern Recognition, Advanced Statistical Algorithms, Python Programming, Statistical Learning, Applied Optimization, Computational Financial Modelling, Probability and Statistics, Numerical Analysis, Linear Algebra, C Programming, Real Analysis, and Technical Communication.</p>
                     </section>
                 </div>
             </div>
