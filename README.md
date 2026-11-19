@@ -8,3 +8,5 @@ Institution marks identify academic affiliations. The Citadel Securities wordmar
 - [Algorithmic trading](https://images.unsplash.com/photo-1590283603385-17ffb3a7f29f)
 - [Forecasting and learning](https://images.unsplash.com/photo-1515879218367-8466d910aaa4)
 - [DeFi and survival analysis](https://images.unsplash.com/photo-1621761191319-c6fb62004040)
+
+Certificate files in `assets/certificates/` are watermarked copies for public portfolio display; the supplied originals are not modified. The watermark identifies the owner and website and is intended as a visible deterrent, not tamper-proof protection.
