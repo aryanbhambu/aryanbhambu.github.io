@@ -151,8 +151,15 @@
       .research-points li::before { content: "✓"; position: absolute; left: 0; top: 4px; width: 19px; height: 19px; display: grid; place-items: center; border-radius: 50%; background: var(--tint); color: var(--blue-dark); font-size: 12px; font-weight: 700; }
       .research-toolkit { margin-top: 48px; }
       .focus-title { margin: 0 0 8px; font-size: 23px; }
-      .research-toolkit p { max-width: 930px; margin: 12px 0; color: var(--body); font-size: 17px; }
-      .research-toolkit strong { color: var(--ink); }
+      .method-flow { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; margin: 20px 0 24px; }
+      .method-step { display: grid; grid-template-columns: 42px minmax(0, 1fr); align-content: start; gap: 8px 13px; padding: 20px; border: 1px solid var(--line); border-top: 3px solid var(--green); border-radius: 14px; background: linear-gradient(150deg, #fff, #f8fbff); }
+      .method-step:nth-child(2) { border-top-color: var(--blue); }
+      .method-step:nth-child(3) { border-top-color: #9c621d; }
+      .method-number { grid-row: span 2; display: grid; width: 40px; height: 40px; place-items: center; border-radius: 13px; background: var(--tint); color: var(--accent); font-size: 14px; font-weight: 800; }
+      .method-step h4 { margin: 2px 0 0; color: var(--ink); font-size: 17px; }
+      .method-step p { grid-column: 2; margin: 0; color: var(--muted); font-size: 15px; line-height: 1.65; }
+      .toolkit-line { max-width: 950px; margin: 0; padding-left: 15px; border-left: 3px solid var(--green); color: var(--muted); font-size: 15px; line-height: 1.7; }
+      .toolkit-line strong { color: var(--ink); }
 
       .publications-list { display: grid; gap: 13px; }
       .pub-section-subtitle { margin: 22px 0 2px; color: var(--accent); font-size: 19px; font-weight: 700; }
@@ -168,10 +175,15 @@
 
       .experience-content { display: grid; gap: 28px; max-width: 980px; margin-top: 28px; }
       .experience-group h3 { margin: 0 0 12px; color: var(--accent); font-size: 21px; }
-      .experience-line { margin: 0 0 12px; color: var(--body); font-size: 16px; line-height: 1.7; }
+      .experience-line { position: relative; margin: 0 0 12px; padding-left: 22px; color: var(--body); font-size: 16px; line-height: 1.7; }
       .experience-line:last-child { margin-bottom: 0; }
       .experience-line strong { color: var(--ink); }
       .experience-line time { color: var(--accent); font-weight: 600; }
+      .experience-line::before { content: ""; position: absolute; top: .72em; left: 3px; width: 7px; height: 7px; border-radius: 50%; background: var(--green); }
+      .experience-logo { display: inline-block; width: 32px; height: 23px; margin: 0 5px 0 1px; object-fit: contain; vertical-align: -6px; }
+      .experience-logo-frame { display: inline-grid; width: 30px; height: 24px; margin: 0 5px 0 1px; place-items: center; border-radius: 5px; vertical-align: -7px; }
+      .experience-logo-frame--dark { background: #111827; }
+      .experience-logo-frame img { width: 19px; height: 19px; object-fit: contain; }
 
       .contact-layout { display: grid; grid-template-columns: minmax(0, 1.45fr) minmax(300px, .95fr); align-items: start; gap: clamp(30px, 5vw, 64px); margin-top: 24px; }
       .contact-form { display: grid; gap: 17px; }
@@ -201,6 +213,7 @@
         .nav-inner { width: min(100% - 36px, 1120px); }
         main { width: min(100% - 36px, 1120px); }
         .research-heading { display: block; }
+        .method-flow { grid-template-columns: 1fr; }
       }
       @media (max-width: 760px) {
         .nav-inner { min-height: 68px; }
@@ -459,8 +472,24 @@
 
                 <div class="research-toolkit">
                     <h3 class="focus-title">Methods &amp; toolkit</h3>
-                    <p><strong>Learning methods.</strong> I use randomized neural methods, including RVFL and deep RVFL models, with fixed random hidden mappings and fitted output layers for efficient forecasting, alongside backpropagation-trained deep networks for nonlinear representations. For sequential and long-horizon data, my work includes recurrent LSTM/GRU, transformer-inspired, and state-space models. Heteroscedastic models, ensembles, and multi-output designs address changing variance, related targets, and predictive uncertainty; deep reinforcement learning frames trading and portfolio allocation as sequential decisions.</p>
-                    <p><strong>Programming &amp; tools.</strong> Python, R, C, MATLAB, LaTeX, TensorFlow, PyTorch, Joblib, Dask, high-performance computing, and parallel computing.</p>
+                    <div class="method-flow">
+                        <article class="method-step">
+                            <span class="method-number">01</span>
+                            <h4>Build expressive learners</h4>
+                            <p>Combine randomized RVFL and deep RVFL networks, with fitted output layers, and backpropagation-trained deep models to learn nonlinear representations efficiently.</p>
+                        </article>
+                        <article class="method-step">
+                            <span class="method-number">02</span>
+                            <h4>Model temporal structure</h4>
+                            <p>Use LSTM/GRU recurrent networks, transformer-inspired and state-space architectures, and multi-output learning for sequential and long-horizon data.</p>
+                        </article>
+                        <article class="method-step">
+                            <span class="method-number">03</span>
+                            <h4>Quantify uncertainty &amp; decide</h4>
+                            <p>Apply heteroscedastic models and deep ensembles to changing variance and forecast uncertainty; use deep reinforcement learning for trading and portfolio decisions.</p>
+                        </article>
+                    </div>
+                    <p class="toolkit-line"><strong>Implementation toolkit:</strong> Python, R, C, MATLAB, LaTeX, TensorFlow, PyTorch, Joblib, Dask, high-performance computing, and parallel computing.</p>
                 </div>
             </div>
         </section>
@@ -866,23 +895,23 @@
                 <div class="experience-content">
                     <section class="experience-group">
                         <h3>Research &amp; professional roles</h3>
-                        <p class="experience-line"><strong>Postdoctoral Researcher</strong> · IITB–Citadel Securities Quantitative Research Lab, IIT Bombay · <time datetime="2026-08">August 2026–Present</time>. Conducting research in quantitative finance, financial machine learning, and data-driven methods for financial markets under the supervision of Prof. Sudeep R. Bapat.</p>
-                        <p class="experience-line"><strong>Freelance Research Analyst</strong> · Turing · <time datetime="2024-06">June 2024</time>–<time datetime="2026-03">March 2026</time>. Supported next-generation AI research through evaluation and technical analysis of generative and agentic methods, including algorithmic validation.</p>
+                        <p class="experience-line"><strong>Postdoctoral Researcher</strong> · <img class="experience-logo" src="assets/logos/iit-bombay.svg" alt=""> IITB–Citadel Securities Quantitative Research Lab, IIT Bombay · <time datetime="2026-08">August 2026–Present</time>. Conducting research in quantitative finance, financial machine learning, and data-driven methods for financial markets under the supervision of Prof. Sudeep R. Bapat.</p>
+                        <p class="experience-line"><strong>Freelance Research Analyst</strong> · <span class="experience-logo-frame experience-logo-frame--dark"><img src="assets/logos/turing.ico" alt=""></span> Turing · <time datetime="2024-06">June 2024</time>–<time datetime="2026-03">March 2026</time>. Supported next-generation AI research through evaluation and technical analysis of generative and agentic methods, including algorithmic validation.</p>
                         <p class="experience-line"><strong>Research Intern</strong> · MEDSOLU (OPC) Pvt. Ltd. · Summer 2022. Designed and conducted exploratory analyses using bootstrap and deep-ensemble time-series modelling to study financial forecasting, risk-adjusted returns, and uncertainty estimation.</p>
                     </section>
 
                     <section class="experience-group">
                         <h3>Teaching</h3>
-                        <p class="experience-line"><strong>Tutor</strong> · Coursera B.Sc. Programme, IIT Guwahati · August 2026–Present. DA210: Time Series Analysis &amp; Forecasting.</p>
-                        <p class="experience-line"><strong>Lead Teaching Assistant</strong> · IIT Guwahati · 2025–2026. DA105: Linear Algebra; DA210: Time Series Analysis &amp; Forecasting.</p>
-                        <p class="experience-line"><strong>Teaching Assistant</strong> · IIT Guwahati · 2023–2026. MA101: Real Analysis and Calculus; MA683: Statistical Analysis; MA373: Monte Carlo Simulation; MA374: Financial Engineering Lab; MA225: Probability Theory and Random Processes; DA105: Linear Algebra.</p>
+                        <p class="experience-line"><strong>Tutor</strong> · Coursera B.Sc. Programme, <img class="experience-logo" src="assets/logos/index.png" alt=""> IIT Guwahati · August 2026–Present. DA210: Time Series Analysis &amp; Forecasting.</p>
+                        <p class="experience-line"><strong>Lead Teaching Assistant</strong> · <img class="experience-logo" src="assets/logos/index.png" alt=""> IIT Guwahati · 2025–2026. DA105: Linear Algebra; DA210: Time Series Analysis &amp; Forecasting.</p>
+                        <p class="experience-line"><strong>Teaching Assistant</strong> · <img class="experience-logo" src="assets/logos/index.png" alt=""> IIT Guwahati · 2023–2026. MA101: Real Analysis and Calculus; MA683: Statistical Analysis; MA373: Monte Carlo Simulation; MA374: Financial Engineering Lab; MA225: Probability Theory and Random Processes; DA105: Linear Algebra.</p>
                     </section>
 
                     <section class="experience-group">
                         <h3>Academic service &amp; leadership</h3>
-                        <p class="experience-line"><strong>Secretary</strong> · Research Scholars’ Forum, Department of Mathematics, IIT Guwahati · August 2023–September 2025.</p>
-                        <p class="experience-line"><strong>Member</strong> · DPPC, IIT Guwahati · August 2023–September 2024.</p>
-                        <p class="experience-line"><strong>Research Council Member</strong> · IIT Mandi · September 2020–July 2021. Contributed to discussions on R&amp;D programmes and future directions for mathematical-sciences projects.</p>
+                        <p class="experience-line"><strong>Secretary</strong> · Research Scholars’ Forum, Department of Mathematics, <img class="experience-logo" src="assets/logos/index.png" alt=""> IIT Guwahati · August 2023–September 2025.</p>
+                        <p class="experience-line"><strong>Member</strong> · DPPC, <img class="experience-logo" src="assets/logos/index.png" alt=""> IIT Guwahati · August 2023–September 2024.</p>
+                        <p class="experience-line"><strong>Research Council Member</strong> · <img class="experience-logo" src="assets/logos/iit-mandi.png" alt=""> IIT Mandi · September 2020–July 2021. Contributed to discussions on R&amp;D programmes and future directions for mathematical-sciences projects.</p>
                         <p class="experience-line"><strong>Journal reviewer</strong> · Neurocomputing, Applied Soft Computing, Neural Networks, Pattern Recognition, Engineering Applications of Artificial Intelligence, Computers &amp; Electrical Engineering, and the International Journal of Cognitive Computing in Engineering.</p>
                     </section>
 
