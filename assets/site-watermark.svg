@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="520" height="460" viewBox="0 0 520 460" fill="none">
+  <g stroke="#66869B" stroke-width="1.2" stroke-opacity=".065">
+    <circle cx="260" cy="230" r="112"/>
+    <ellipse cx="260" cy="230" rx="150" ry="62" transform="rotate(-32 260 230)"/>
+    <ellipse cx="260" cy="230" rx="150" ry="62" transform="rotate(32 260 230)"/>
+    <path d="M92 230h56m224 0h56M260 62v56m0 224v56"/>
+    <path d="M123 128l39 39m196 196 39 39m0-274-39 39M162 293l-39 39"/>
+  </g>
+  <g fill="#4F7890" fill-opacity=".07">
+    <circle cx="110" cy="230" r="3"/>
+    <circle cx="410" cy="230" r="3"/>
+    <circle cx="260" cy="80" r="3"/>
+    <circle cx="260" cy="380" r="3"/>
+    <circle cx="158" cy="128" r="2.5"/>
+    <circle cx="362" cy="332" r="2.5"/>
+    <circle cx="362" cy="128" r="2.5"/>
+    <circle cx="158" cy="332" r="2.5"/>
+  </g>
+  <text x="260" y="244" text-anchor="middle" fill="#66869B" fill-opacity=".04" font-family="Georgia, 'Times New Roman', serif" font-size="48" letter-spacing="2">AB</text>
+</svg>

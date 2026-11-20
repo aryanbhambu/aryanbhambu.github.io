@@ -30,7 +30,15 @@
       body {
         min-height: 100vh;
         margin: 0;
-        background: var(--canvas);
+        background-color: var(--canvas);
+        background-image:
+          radial-gradient(ellipse at 12% 14%, rgba(37, 99, 235, .025), transparent 34%),
+          radial-gradient(ellipse at 88% 82%, rgba(22, 131, 74, .022), transparent 36%),
+          url("assets/site-watermark.svg");
+        background-size: 100% 100%, 100% 100%, 520px 460px;
+        background-position: center, center, center;
+        background-repeat: no-repeat, no-repeat, repeat;
+        background-attachment: fixed, fixed, fixed;
         color: var(--body);
         font: 18px/1.72 "Source Sans 3", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
         -webkit-font-smoothing: antialiased;
@@ -192,17 +200,20 @@
       .experience-logo-frame--medsolu img { width: 100%; height: 100%; object-fit: contain; }
       .experience-logo-placeholder { display: grid; width: 50px; height: 50px; place-items: center; border-radius: 8px; background: var(--soft); color: var(--muted); font-size: 14px; font-weight: 700; }
       .experience-title { margin: 0 0 2px; color: var(--ink); font-size: 19px; font-weight: 700; line-height: 1.35; }
+      .experience-title a { color: inherit; text-decoration: none; }
+      .experience-title a:hover, .experience-title a:focus-visible { color: var(--accent); text-decoration: underline; text-underline-offset: 3px; }
       .experience-meta { margin: 0; color: var(--muted); font-size: 15px; line-height: 1.5; }
       .experience-meta a, .activity-meta a, .experience-description a { color: inherit; font-weight: 600; text-decoration: underline; text-decoration-color: #c5cfdd; text-underline-offset: 3px; }
       .experience-meta a { text-decoration: none; }
       .experience-meta a:hover, .experience-meta a:focus-visible, .activity-meta a:hover, .activity-meta a:focus-visible, .experience-description a:hover, .experience-description a:focus-visible { color: var(--accent); text-decoration: underline; }
       .experience-meta time, .experience-season { color: var(--muted); font-weight: 400; }
       .experience-description { margin: 7px 0 0; color: var(--body); font-size: 16px; line-height: 1.6; }
-      .activity-section { display: grid; gap: 10px; }
-      .activity-section h4 { margin: 0; color: var(--ink); font-size: 18px; }
-      .activity-list { display: grid; gap: 12px; margin: 0; padding: 0; list-style: none; }
-      .activity-entry { position: relative; padding-left: 22px; }
-      .activity-entry::before { content: ""; position: absolute; top: .65em; left: 3px; width: 7px; height: 7px; border-radius: 50%; background: var(--green); }
+      .activity-section { display: grid; gap: 0; }
+      .activity-section + .activity-section { margin-top: 12px; padding-top: 8px; border-top: 1px solid var(--line); }
+      .activity-section h4 { margin: 0; padding: 12px 0 4px; color: var(--ink); font-size: 19px; }
+      .activity-list { display: grid; gap: 0; margin: 0; padding: 0; list-style: none; }
+      .activity-entry { padding: 12px 0; border-bottom: 1px solid var(--line); }
+      .activity-entry:last-child { border-bottom: 0; }
       .activity-title { margin: 0; color: var(--ink); font-size: 16px; font-weight: 600; line-height: 1.55; }
       .activity-title a, .activity-title a:hover, .activity-title a:focus-visible { color: inherit; text-decoration-color: #c5cfdd; text-underline-offset: 3px; }
       .activity-meta { margin: 2px 0 0; color: var(--muted); font-size: 15px; line-height: 1.55; }
@@ -1006,7 +1017,7 @@
                     </section>
 
                     <section class="experience-group">
-                        <h3>Academic activities &amp; recognition</h3>
+                        <h3>Academic activities</h3>
                         <div class="activity-section">
                             <h4>Conference presentations</h4>
                             <ul class="activity-list">
@@ -1031,15 +1042,34 @@
                                 <li class="activity-entry"><p class="activity-title"><a href="https://www.ieor.iitb.ac.in/lso2025/" target="_blank" rel="noopener noreferrer">Large Scale Optimization Summer School (LSO 2025)</a></p><p class="activity-meta"><a href="https://www.iitb.ac.in/" target="_blank" rel="noopener noreferrer">IIT Bombay</a> · June 16–21, 2025</p></li>
                             </ul>
                         </div>
-                        <div class="activity-section">
-                            <h4>Awards</h4>
-                            <ul class="activity-list">
-                                <li class="activity-entry"><p class="activity-title">Institute Research Fellowship · IIT Guwahati · 2022–June 2026</p></li>
-                                <li class="activity-entry"><p class="activity-title"><a href="https://online-inspire.gov.in/" target="_blank" rel="noopener noreferrer">DST-Inspire Scholarship</a> · 2016–2021</p></li>
-                                <li class="activity-entry"><p class="activity-title"><a href="https://jam.iitkgp.ac.in/" target="_blank" rel="noopener noreferrer">IIT JAM</a> · 2019</p></li>
-                                <li class="activity-entry"><p class="activity-title">Prof. R. K. Kothari Scholarship · 2018</p></li>
-                            </ul>
-                        </div>
+                    </section>
+
+                    <section class="experience-group">
+                        <h3>Awards</h3>
+                        <article class="experience-entry">
+                            <div class="experience-logo-slot" aria-hidden="true"><span class="experience-logo-placeholder">IRF</span></div>
+                            <div><h4 class="experience-title">Institute Research Fellowship</h4>
+                                <p class="experience-meta">IIT Guwahati · 2022–June 2026</p>
+                            </div>
+                        </article>
+                        <article class="experience-entry">
+                            <div class="experience-logo-slot" aria-hidden="true"><span class="experience-logo-placeholder">DST</span></div>
+                            <div><h4 class="experience-title"><a href="https://online-inspire.gov.in/" target="_blank" rel="noopener noreferrer">DST-Inspire Scholarship</a></h4>
+                                <p class="experience-meta">2016–2021</p>
+                            </div>
+                        </article>
+                        <article class="experience-entry">
+                            <div class="experience-logo-slot" aria-hidden="true"><span class="experience-logo-placeholder">JAM</span></div>
+                            <div><h4 class="experience-title"><a href="https://jam.iitkgp.ac.in/" target="_blank" rel="noopener noreferrer">IIT JAM</a></h4>
+                                <p class="experience-meta">2019</p>
+                            </div>
+                        </article>
+                        <article class="experience-entry">
+                            <div class="experience-logo-slot" aria-hidden="true"><span class="experience-logo-placeholder">RK</span></div>
+                            <div><h4 class="experience-title">Prof. R. K. Kothari Scholarship</h4>
+                                <p class="experience-meta">2018</p>
+                            </div>
+                        </article>
                     </section>
                 </div>
             </div>
