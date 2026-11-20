@@ -176,37 +176,36 @@
       .pub-link, .social-chip { display: inline-flex; align-items: center; gap: 6px; padding: 6px 10px; border: 1px solid var(--line); border-radius: 9px; background: #fff; font-size: 14px; font-weight: 600; text-decoration: none; }
       .preprint { border-style: dashed; }
 
-      .experience-content { display: grid; gap: 30px; max-width: 980px; margin-top: 28px; }
-      .experience-group { display: grid; gap: 18px; }
-      .experience-group h3 { margin: 0; color: var(--accent); font-size: 21px; }
-      .experience-entry { position: relative; padding-left: 22px; }
-      .experience-entry::before, .activity-entry::before { content: ""; position: absolute; top: .72em; left: 3px; width: 7px; height: 7px; border-radius: 50%; background: var(--green); }
-      .experience-entry::before { top: 7px; }
-      .experience-title { margin: 0 0 4px; color: var(--ink); font-size: 17px; font-weight: 700; }
-      .experience-meta { margin: 0; color: var(--muted); font-size: 15px; line-height: 1.55; }
-      .experience-meta a img { display: inline-block; vertical-align: middle; }
-      .experience-meta a, .activity-meta a, .experience-description a { color: inherit; font-weight: 600; text-decoration: underline; text-decoration-color: #c5cfdd; text-underline-offset: 3px; }
-      .experience-meta a:hover, .experience-meta a:focus-visible, .activity-meta a:hover, .activity-meta a:focus-visible, .experience-description a:hover, .experience-description a:focus-visible { color: var(--accent); text-decoration: underline; }
-      .experience-meta time { color: var(--accent); font-weight: 600; }
-      .experience-season { color: #b7791f; font-weight: 700; }
-      .experience-description { margin: 5px 0 0; color: var(--body); font-size: 15px; line-height: 1.65; }
-      .experience-logos { display: inline-flex; align-items: center; gap: 7px; margin-right: 8px; vertical-align: middle; }
-      .experience-logo { display: inline-block; width: 32px; height: 23px; object-fit: contain; }
-      .experience-logo--citadel { width: 150px; height: 12px; object-fit: contain; }
-      .experience-logo-frame { display: inline-grid; width: 30px; height: 24px; margin-right: 7px; place-items: center; border-radius: 5px; vertical-align: middle; }
+      .experience-content { display: grid; gap: 22px; max-width: 920px; margin-top: 24px; }
+      .experience-group { display: grid; gap: 0; padding: 20px 24px; border: 1px solid var(--line); border-radius: 14px; background: #fff; }
+      .experience-group h3 { margin: 0 0 3px; padding-bottom: 13px; border-bottom: 1px solid var(--line); color: var(--ink); font-size: 19px; }
+      .experience-entry { display: grid; grid-template-columns: 58px minmax(0, 1fr); align-items: start; gap: 18px; padding: 17px 0; border-bottom: 1px solid var(--line); }
+      .experience-group > .experience-entry:last-child { padding-bottom: 0; border-bottom: 0; }
+      .experience-logo-slot { display: grid; width: 54px; min-height: 54px; place-items: center; }
+      .experience-logos { display: grid; justify-items: center; gap: 4px; }
+      .experience-logo { display: block; width: 48px; height: 42px; object-fit: contain; }
+      .experience-logo--citadel { width: 72px; height: 16px; }
+      .experience-logo-frame { display: grid; width: 50px; height: 50px; place-items: center; border-radius: 8px; }
       .experience-logo-frame--dark { background: #111827; }
-      .experience-logo-frame img { width: 19px; height: 19px; object-fit: contain; }
-      .experience-logo-frame--medsolu { width: 43px; height: 48px; overflow: hidden; background: #050505; }
+      .experience-logo-frame img { width: 32px; height: 32px; object-fit: contain; }
+      .experience-logo-frame--medsolu { overflow: hidden; background: #050505; }
       .experience-logo-frame--medsolu img { width: 100%; height: 100%; object-fit: contain; }
+      .experience-logo-placeholder { display: grid; width: 50px; height: 50px; place-items: center; border-radius: 8px; background: var(--soft); color: var(--muted); font-size: 14px; font-weight: 700; }
+      .experience-title { margin: 0 0 2px; color: var(--ink); font-size: 19px; font-weight: 700; line-height: 1.35; }
+      .experience-meta { margin: 0; color: var(--muted); font-size: 15px; line-height: 1.5; }
+      .experience-meta a, .activity-meta a, .experience-description a { color: inherit; font-weight: 600; text-decoration: underline; text-decoration-color: #c5cfdd; text-underline-offset: 3px; }
+      .experience-meta a { text-decoration: none; }
+      .experience-meta a:hover, .experience-meta a:focus-visible, .activity-meta a:hover, .activity-meta a:focus-visible, .experience-description a:hover, .experience-description a:focus-visible { color: var(--accent); text-decoration: underline; }
+      .experience-meta time, .experience-season { color: var(--muted); font-weight: 400; }
+      .experience-description { margin: 7px 0 0; color: var(--body); font-size: 16px; line-height: 1.6; }
       .activity-section { display: grid; gap: 10px; }
-      .activity-section h4 { margin: 0; color: var(--ink); font-size: 16px; }
+      .activity-section h4 { margin: 0; color: var(--ink); font-size: 18px; }
       .activity-list { display: grid; gap: 12px; margin: 0; padding: 0; list-style: none; }
       .activity-entry { position: relative; padding-left: 22px; }
-      .activity-entry::before { top: .65em; }
-      .activity-title { margin: 0; color: var(--ink); font-size: 15px; font-weight: 600; line-height: 1.55; }
+      .activity-entry::before { content: ""; position: absolute; top: .65em; left: 3px; width: 7px; height: 7px; border-radius: 50%; background: var(--green); }
+      .activity-title { margin: 0; color: var(--ink); font-size: 16px; font-weight: 600; line-height: 1.55; }
       .activity-title a, .activity-title a:hover, .activity-title a:focus-visible { color: inherit; text-decoration-color: #c5cfdd; text-underline-offset: 3px; }
-      .activity-meta { margin: 2px 0 0; color: var(--muted); font-size: 14px; line-height: 1.55; }
-      .coursework-line { margin: 0; color: var(--body); font-size: 15px; line-height: 1.65; }
+      .activity-meta { margin: 2px 0 0; color: var(--muted); font-size: 15px; line-height: 1.55; }
 
       .contact-layout { display: grid; grid-template-columns: minmax(0, 1.45fr) minmax(300px, .95fr); align-items: start; gap: clamp(30px, 5vw, 64px); margin-top: 24px; }
       .contact-form { display: grid; gap: 17px; }
@@ -265,6 +264,18 @@
         .research-copy { padding: 0; }
         .research-copy h3 { font-size: 29px; }
         .research-copy p { font-size: 16px; }
+        .experience-content { gap: 16px; margin-top: 20px; }
+        .experience-group { padding: 16px 14px; }
+        .experience-group h3 { font-size: 18px; }
+        .experience-entry { grid-template-columns: 44px minmax(0, 1fr); gap: 12px; padding: 15px 0; }
+        .experience-logo-slot { width: 42px; min-height: 42px; }
+        .experience-logo { width: 40px; height: 36px; }
+        .experience-logo--citadel { width: 60px; height: 14px; }
+        .experience-logo-frame, .experience-logo-placeholder { width: 40px; height: 40px; }
+        .experience-logo-frame img { width: 27px; height: 27px; }
+        .experience-title { font-size: 18px; }
+        .experience-meta { font-size: 14px; }
+        .experience-description { font-size: 15px; }
         .focus-grid { grid-template-columns: 1fr; }
         .focus-card { min-height: 0; }
         .form-row { grid-template-columns: 1fr; gap: 17px; }
@@ -915,62 +926,82 @@
                     <section class="experience-group">
                         <h3>Research &amp; professional roles</h3>
                         <article class="experience-entry">
-                            <h4 class="experience-title">Postdoctoral Researcher</h4>
-                            <p class="experience-meta"><span class="experience-logos"><img class="experience-logo" src="assets/logos/iit-bombay.svg" alt="IIT Bombay logo"><a href="https://www.citadelsecurities.com/" target="_blank" rel="noopener noreferrer" aria-label="Citadel Securities official website"><img class="experience-logo experience-logo--citadel" src="assets/logos/citadel-securities.png" alt="Citadel Securities logo"></a></span> <a href="https://www.som.iitb.ac.in/citadel/" target="_blank" rel="noopener noreferrer">IITB-Citadel Securities Quantitative Research Lab</a>, <a href="https://www.iitb.ac.in/" target="_blank" rel="noopener noreferrer">IIT Bombay</a> · <time datetime="2026-08">August 2026–Present</time></p>
-                            <p class="experience-description">Conducting research in quantitative finance, financial machine learning, and data-driven methods for financial markets under the supervision of <a href="https://sites.google.com/view/srbapat/home" target="_blank" rel="noopener noreferrer">Prof. Sudeep R. Bapat</a>.</p>
+                            <div class="experience-logo-slot" aria-hidden="true"><span class="experience-logos"><img class="experience-logo" src="assets/logos/iit-bombay.svg" alt=""><img class="experience-logo experience-logo--citadel" src="assets/logos/citadel-securities.png" alt=""></span></div>
+                            <div><h4 class="experience-title">Postdoctoral Researcher</h4>
+                                <p class="experience-meta"><a href="https://www.som.iitb.ac.in/citadel/" target="_blank" rel="noopener noreferrer">IITB-Citadel Securities Quantitative Research Lab</a>, <a href="https://www.iitb.ac.in/" target="_blank" rel="noopener noreferrer">IIT Bombay</a> · <time datetime="2026-08">August 2026–Present</time></p>
+                                <p class="experience-description">Conducting research in quantitative finance, financial machine learning, and data-driven methods for financial markets under the supervision of <a href="https://sites.google.com/view/srbapat/home" target="_blank" rel="noopener noreferrer">Prof. Sudeep R. Bapat</a>.</p>
+                            </div>
                         </article>
                         <article class="experience-entry">
-                            <h4 class="experience-title">Freelance Research Analyst</h4>
-                            <p class="experience-meta"><span class="experience-logo-frame experience-logo-frame--dark" aria-hidden="true"><img src="assets/logos/turing.ico" alt=""></span> <a href="https://www.turing.com/" target="_blank" rel="noopener noreferrer">Turing</a> · <time datetime="2024-06">June 2024</time>–<time datetime="2026-08">August 2026</time></p>
-                            <p class="experience-description">Supported next-generation AI research through evaluation and technical analysis of generative and agentic methods, including algorithmic validation.</p>
+                            <div class="experience-logo-slot" aria-hidden="true"><span class="experience-logo-frame experience-logo-frame--dark"><img src="assets/logos/turing.ico" alt=""></span></div>
+                            <div><h4 class="experience-title">Freelance Research Analyst</h4>
+                                <p class="experience-meta"><a href="https://www.turing.com/" target="_blank" rel="noopener noreferrer">Turing</a> · <time datetime="2024-06">June 2024</time>–<time datetime="2026-08">August 2026</time></p>
+                                <p class="experience-description">Supported next-generation AI research through evaluation and technical analysis of generative and agentic methods, including algorithmic validation.</p>
+                            </div>
                         </article>
                         <article class="experience-entry">
-                            <h4 class="experience-title">Research Intern</h4>
-                            <p class="experience-meta"><span class="experience-logo-frame experience-logo-frame--medsolu" aria-hidden="true"><img src="assets/logos/medsolu.png" alt=""></span> <a href="https://sites.google.com/medsolu.co.in/medsolu-opc-pvt-ltd/home" target="_blank" rel="noopener noreferrer">MEDSOLU (OPC) Pvt. Ltd.</a> · <span class="experience-season">Summer 2022</span></p>
-                            <p class="experience-description">Designed and conducted exploratory analyses using bootstrap and deep-ensemble time-series modelling to study financial forecasting, risk-adjusted returns, and uncertainty estimation.</p>
+                            <div class="experience-logo-slot" aria-hidden="true"><span class="experience-logo-frame experience-logo-frame--medsolu"><img src="assets/logos/medsolu.png" alt=""></span></div>
+                            <div><h4 class="experience-title">Research Intern</h4>
+                                <p class="experience-meta"><a href="https://sites.google.com/medsolu.co.in/medsolu-opc-pvt-ltd/home" target="_blank" rel="noopener noreferrer">MEDSOLU (OPC) Pvt. Ltd.</a> · <span class="experience-season">Summer 2022</span></p>
+                                <p class="experience-description">Designed and conducted exploratory analyses using bootstrap and deep-ensemble time-series modelling to study financial forecasting, risk-adjusted returns, and uncertainty estimation.</p>
+                            </div>
                         </article>
                     </section>
 
                     <section class="experience-group">
                         <h3>Teaching</h3>
                         <article class="experience-entry">
-                            <h4 class="experience-title">Tutor</h4>
-                            <p class="experience-meta"><a href="https://www.coursera.org/degrees/bachelor-of-science-data-science-ai-iitguwahati/academics" target="_blank" rel="noopener noreferrer">Coursera B.Sc. (Honours) in Data Science &amp; Artificial Intelligence</a>, <a href="https://www.iitg.ac.in/" target="_blank" rel="noopener noreferrer"><img class="experience-logo" src="assets/logos/index.png" alt=""> IIT Guwahati</a> · <time datetime="2026-05">May 2026</time>–<time datetime="2026-08">August 2026</time></p>
-                            <p class="experience-description"><a href="https://iitg.ac.in/oes/odp/bsc/BSc_Syllabus/" target="_blank" rel="noopener noreferrer">DA210: Time Series Analysis &amp; Forecasting</a></p>
+                            <div class="experience-logo-slot" aria-hidden="true"><img class="experience-logo" src="assets/logos/index.png" alt=""></div>
+                            <div><h4 class="experience-title">Tutor</h4>
+                                <p class="experience-meta"><a href="https://www.coursera.org/degrees/bachelor-of-science-data-science-ai-iitguwahati/academics" target="_blank" rel="noopener noreferrer">Coursera B.Sc. (Honours) in Data Science &amp; Artificial Intelligence</a>, <a href="https://www.iitg.ac.in/" target="_blank" rel="noopener noreferrer">IIT Guwahati</a> · <time datetime="2026-05">May 2026</time>–<time datetime="2026-08">August 2026</time></p>
+                                <p class="experience-description"><a href="https://iitg.ac.in/oes/odp/bsc/BSc_Syllabus/" target="_blank" rel="noopener noreferrer">DA210: Time Series Analysis &amp; Forecasting</a></p>
+                            </div>
                         </article>
                         <article class="experience-entry">
-                            <h4 class="experience-title">Lead Teaching Assistant</h4>
-                            <p class="experience-meta"><a href="https://www.iitg.ac.in/" target="_blank" rel="noopener noreferrer"><img class="experience-logo" src="assets/logos/index.png" alt=""> IIT Guwahati</a> · 2025–2026</p>
-                            <p class="experience-description"><a href="https://iitg.ac.in/oes/odp/bsc/BSc_Syllabus/" target="_blank" rel="noopener noreferrer">DA105: Linear Algebra</a><br><a href="https://iitg.ac.in/oes/odp/bsc/BSc_Syllabus/" target="_blank" rel="noopener noreferrer">DA210: Time Series Analysis &amp; Forecasting</a></p>
+                            <div class="experience-logo-slot" aria-hidden="true"><img class="experience-logo" src="assets/logos/index.png" alt=""></div>
+                            <div><h4 class="experience-title">Lead Teaching Assistant</h4>
+                                <p class="experience-meta"><a href="https://www.iitg.ac.in/" target="_blank" rel="noopener noreferrer">IIT Guwahati</a> · 2025–2026</p>
+                                <p class="experience-description"><a href="https://iitg.ac.in/oes/odp/bsc/BSc_Syllabus/" target="_blank" rel="noopener noreferrer">DA105: Linear Algebra</a><br><a href="https://iitg.ac.in/oes/odp/bsc/BSc_Syllabus/" target="_blank" rel="noopener noreferrer">DA210: Time Series Analysis &amp; Forecasting</a></p>
+                            </div>
                         </article>
                         <article class="experience-entry">
-                            <h4 class="experience-title">Teaching Assistant</h4>
-                            <p class="experience-meta"><a href="https://www.iitg.ac.in/" target="_blank" rel="noopener noreferrer"><img class="experience-logo" src="assets/logos/index.png" alt=""> IIT Guwahati</a> · 2023–2026</p>
-                            <p class="experience-description"><a href="https://www.iitg.ac.in/vinay.wagh/Teaching/2022-23/Odd/MA-101/" target="_blank" rel="noopener noreferrer">MA101: Mathematics I</a><br><a href="https://www.iitg.ac.in/maths/old/acads/mscmath_struct.php?id=MA521#MA682" target="_blank" rel="noopener noreferrer">MA682: Statistical Inference</a><br><a href="https://www.iitg.ac.in/maths/index_syllabus_details.php?slno=RE9ISit6UEI4SVJMTTU5MWE4OVZhZz09" target="_blank" rel="noopener noreferrer">MA323: Monte Carlo Simulation</a><br><a href="https://www.iitg.ac.in/nselvaraju/ma374_2023/index.html" target="_blank" rel="noopener noreferrer">MA374: Financial Engineering Lab</a><br><a href="https://www.iitg.ac.in/acad/CourseStructure/Btech2018/MA/MA225.htm" target="_blank" rel="noopener noreferrer">MA225: Probability Theory and Random Processes</a><br><a href="https://iitg.ac.in/oes/odp/bsc/BSc_Syllabus/" target="_blank" rel="noopener noreferrer">DA105: Linear Algebra</a></p>
+                            <div class="experience-logo-slot" aria-hidden="true"><img class="experience-logo" src="assets/logos/index.png" alt=""></div>
+                            <div><h4 class="experience-title">Teaching Assistant</h4>
+                                <p class="experience-meta"><a href="https://www.iitg.ac.in/" target="_blank" rel="noopener noreferrer">IIT Guwahati</a> · 2023–2026</p>
+                                <p class="experience-description"><a href="https://www.iitg.ac.in/vinay.wagh/Teaching/2022-23/Odd/MA-101/" target="_blank" rel="noopener noreferrer">MA101: Mathematics I</a><br><a href="https://www.iitg.ac.in/maths/old/acads/mscmath_struct.php?id=MA521#MA682" target="_blank" rel="noopener noreferrer">MA682: Statistical Inference</a><br><a href="https://www.iitg.ac.in/maths/index_syllabus_details.php?slno=RE9ISit6UEI4SVJMTTU5MWE4OVZhZz09" target="_blank" rel="noopener noreferrer">MA323: Monte Carlo Simulation</a><br><a href="https://www.iitg.ac.in/nselvaraju/ma374_2023/index.html" target="_blank" rel="noopener noreferrer">MA374: Financial Engineering Lab</a><br><a href="https://www.iitg.ac.in/acad/CourseStructure/Btech2018/MA/MA225.htm" target="_blank" rel="noopener noreferrer">MA225: Probability Theory and Random Processes</a><br><a href="https://iitg.ac.in/oes/odp/bsc/BSc_Syllabus/" target="_blank" rel="noopener noreferrer">DA105: Linear Algebra</a></p>
+                            </div>
                         </article>
                     </section>
 
                     <section class="experience-group">
                         <h3>Academic service &amp; leadership</h3>
                         <article class="experience-entry">
-                            <h4 class="experience-title">Council Secretary</h4>
-                            <p class="experience-meta"><a href="https://www.iitg.ac.in/clubs/rsf_math/council.html" target="_blank" rel="noopener noreferrer">Research Scholars’ Forum</a>, <a href="https://iitg.ac.in/maths/" target="_blank" rel="noopener noreferrer">Department of Mathematics</a>, <a href="https://www.iitg.ac.in/" target="_blank" rel="noopener noreferrer"><img class="experience-logo" src="assets/logos/index.png" alt=""> IIT Guwahati</a> · August 2023–September 2025</p>
-                            <p class="experience-description">Served in a leadership role for the department’s research-scholars forum.</p>
+                            <div class="experience-logo-slot" aria-hidden="true"><img class="experience-logo" src="assets/logos/index.png" alt=""></div>
+                            <div><h4 class="experience-title">Council Secretary</h4>
+                                <p class="experience-meta"><a href="https://www.iitg.ac.in/clubs/rsf_math/council.html" target="_blank" rel="noopener noreferrer">Research Scholars’ Forum</a>, <a href="https://iitg.ac.in/maths/" target="_blank" rel="noopener noreferrer">Department of Mathematics</a>, <a href="https://www.iitg.ac.in/" target="_blank" rel="noopener noreferrer">IIT Guwahati</a> · August 2023–September 2025</p>
+                                <p class="experience-description">Served in a leadership role for the department’s research-scholars forum.</p>
+                            </div>
                         </article>
                         <article class="experience-entry">
-                            <h4 class="experience-title">Member</h4>
-                            <p class="experience-meta">Departmental Postgraduate Programme Committee (DPPC), <a href="https://www.iitg.ac.in/" target="_blank" rel="noopener noreferrer"><img class="experience-logo" src="assets/logos/index.png" alt=""> IIT Guwahati</a> · August 2023–September 2024</p>
-                            <p class="experience-description">Contributed as a member of the department’s postgraduate-programme committee.</p>
+                            <div class="experience-logo-slot" aria-hidden="true"><img class="experience-logo" src="assets/logos/index.png" alt=""></div>
+                            <div><h4 class="experience-title">Member</h4>
+                                <p class="experience-meta">Departmental Postgraduate Programme Committee (DPPC), <a href="https://www.iitg.ac.in/" target="_blank" rel="noopener noreferrer">IIT Guwahati</a> · August 2023–September 2024</p>
+                                <p class="experience-description">Contributed as a member of the department’s postgraduate-programme committee.</p>
+                            </div>
                         </article>
                         <article class="experience-entry">
-                            <h4 class="experience-title">Research Council Member</h4>
-                            <p class="experience-meta"><a href="https://www.iitmandi.ac.in/" target="_blank" rel="noopener noreferrer"><img class="experience-logo" src="assets/logos/iit-mandi.png" alt=""> IIT Mandi</a> · September 2020–July 2021</p>
-                            <p class="experience-description">Contributed to discussions on R&amp;D programmes and future directions for mathematical-sciences projects.</p>
+                            <div class="experience-logo-slot" aria-hidden="true"><img class="experience-logo" src="assets/logos/iit-mandi.png" alt=""></div>
+                            <div><h4 class="experience-title">Research Council Member</h4>
+                                <p class="experience-meta"><a href="https://www.iitmandi.ac.in/" target="_blank" rel="noopener noreferrer">IIT Mandi</a> · September 2020–July 2021</p>
+                                <p class="experience-description">Contributed to discussions on R&amp;D programmes and future directions for mathematical-sciences projects.</p>
+                            </div>
                         </article>
                         <article class="experience-entry">
-                            <h4 class="experience-title">Journal Reviewer</h4>
-                            <p class="experience-meta"><a href="https://www.sciencedirect.com/journal/neurocomputing" target="_blank" rel="noopener noreferrer">Neurocomputing</a>, <a href="https://www.sciencedirect.com/journal/applied-soft-computing" target="_blank" rel="noopener noreferrer">Applied Soft Computing</a>, <a href="https://www.sciencedirect.com/journal/neural-networks" target="_blank" rel="noopener noreferrer">Neural Networks</a>, <a href="https://www.sciencedirect.com/journal/pattern-recognition" target="_blank" rel="noopener noreferrer">Pattern Recognition</a>, <a href="https://www.sciencedirect.com/journal/engineering-applications-of-artificial-intelligence" target="_blank" rel="noopener noreferrer">Engineering Applications of Artificial Intelligence</a>, <a href="https://www.sciencedirect.com/journal/computers-and-electrical-engineering" target="_blank" rel="noopener noreferrer">Computers &amp; Electrical Engineering</a>, and <a href="https://www.sciencedirect.com/journal/international-journal-of-cognitive-computing-in-engineering" target="_blank" rel="noopener noreferrer">International Journal of Cognitive Computing in Engineering</a></p>
-                            <p class="experience-description">Peer reviewer for research in neural computing, forecasting, pattern recognition, and applied artificial intelligence.</p>
+                            <div class="experience-logo-slot" aria-hidden="true"><span class="experience-logo-placeholder">JR</span></div>
+                            <div><h4 class="experience-title">Journal Reviewer</h4>
+                                <p class="experience-meta"><a href="https://www.sciencedirect.com/journal/neurocomputing" target="_blank" rel="noopener noreferrer">Neurocomputing</a>, <a href="https://www.sciencedirect.com/journal/applied-soft-computing" target="_blank" rel="noopener noreferrer">Applied Soft Computing</a>, <a href="https://www.sciencedirect.com/journal/neural-networks" target="_blank" rel="noopener noreferrer">Neural Networks</a>, <a href="https://www.sciencedirect.com/journal/pattern-recognition" target="_blank" rel="noopener noreferrer">Pattern Recognition</a>, <a href="https://www.sciencedirect.com/journal/engineering-applications-of-artificial-intelligence" target="_blank" rel="noopener noreferrer">Engineering Applications of Artificial Intelligence</a>, <a href="https://www.sciencedirect.com/journal/computers-and-electrical-engineering" target="_blank" rel="noopener noreferrer">Computers &amp; Electrical Engineering</a>, and <a href="https://www.sciencedirect.com/journal/international-journal-of-cognitive-computing-in-engineering" target="_blank" rel="noopener noreferrer">International Journal of Cognitive Computing in Engineering</a></p>
+                                <p class="experience-description">Peer reviewer for research in neural computing, forecasting, pattern recognition, and applied artificial intelligence.</p>
+                            </div>
                         </article>
                     </section>
 
@@ -1009,7 +1040,6 @@
                                 <li class="activity-entry"><p class="activity-title">Prof. R. K. Kothari Scholarship · 2018</p></li>
                             </ul>
                         </div>
-                        <p class="coursework-line"><strong>Relevant coursework:</strong> Deep Learning, Machine Learning, Pattern Recognition, Advanced Statistical Algorithms, Python Programming, Statistical Learning, Applied Optimization, Computational Financial Modelling, Probability and Statistics, Numerical Analysis, Linear Algebra, C Programming, Real Analysis, and Technical Communication.</p>
                     </section>
                 </div>
             </div>
